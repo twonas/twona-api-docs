@@ -1,10 +1,21 @@
 # Working with users
 
+- [Terminology](#terminology)
+- [Invite a new user (POST)](#invite-a-new-user)
+- [Get all invitations (GET)](#get-all-invitations)
+- [Cancel an invitation (DELETE)](#cancel-an-invitation)
+- [Get all users (GET)](#get-all-users)
+- [Get one user (GET)](#get-one-user)
+- [Update one user (PUT)](#update-one-user)
+- [Deactivate one user (DELETE)](#deactivate-one-user)
+- [Activate one user (POST)](#activate-one-user)
+- [Add users bulk (POST)](#add-users-bulk)
+
 ## Terminology
 
 ### Invitation
 
-**Invitation**: an invitation is the process of providing access to a new user via his own email to a specific organization. 
+**Invitation**: an invitation is the process of providing access to a new user via his own email to a specific organization.
 
 **_invitation object_**
 
@@ -32,7 +43,7 @@ Field name |     Type    | Description
 **email** | string | The email address of the user
 **id** | string | The unique identifier (id) of the user (we call it user id)
 **name** | string | The name of the user
-**position** | string | The position of the user 
+**position** | string | The position of the user
 
 ## Invite a new user
 
@@ -184,7 +195,7 @@ curl -X DELETE \
 ```
 ## Get all users
 
-Return the list of all active/inactive users in the organization. 
+Return the list of all active/inactive users in the organization.
 
 ### Request
 
@@ -192,8 +203,8 @@ Return the list of all active/inactive users in the organization.
 
 Method | Url | Description
 ------- | -------- | -------
-GET | https://{BASE_URL}/api/v2/users | Get all active users 
-GET | https://{BASE_URL}/api/v2/users?deleted=true | Get all inactive users 
+GET | https://{BASE_URL}/api/v2/users | Get all active users
+GET | https://{BASE_URL}/api/v2/users?deleted=true | Get all inactive users
 
 #### Inputs
 

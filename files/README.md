@@ -1,5 +1,16 @@
 # Working with files
 
+- [Terminology](#terminology)
+- [Get a file (GET)](#get-a-file)
+- [Download a file (GET)](#download-a-file)
+- [Add metadata to File (PUT)](#add-metadata-to-file)
+- [Get all organization's files (GET)](#get-all-organizations-files)
+
+- **Uploading files**
+    - [Request upload a file (POST)](uploading-files.md#requesting-an-upload-resource)
+    - [Uploading content (PATCH)](uploading-files.md#uploading-content)
+    - [Check upload (HEAD)](uploading-files.md#check-upload)
+
 ## Terminology
 
 ### Files

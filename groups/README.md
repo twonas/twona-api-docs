@@ -1,5 +1,15 @@
 # Working with groups
 
+- [Add group (POST)](#add-group)
+- [Get one group (GET)](#get-one-group)
+- [Get all groups (GET)](#get-all-groups)
+- [Update one group (PUT)](#update-one-group)
+- [Deactivate one group (DELETE)](#deactivate-one-group)
+- [Activate one group (POST)](#activate-one-group)
+- [Get users in group (GET)](#get-users-in-group)
+- [Add one user to group (POST)](#add-one-user-to-group)
+- [Deactivate one user in group (DELETE)](#deactivate-one-user-in-group)
+
 ## Terminology
 
 ### Groups
