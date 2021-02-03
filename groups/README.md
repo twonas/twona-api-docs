@@ -6,7 +6,7 @@
 
 **Group**: Groups are a way to organise users based on specific permissions or automation sets (also called conditions). They are virtual construct and do not impose any hard constrains on the limitations of access of a user unless the corresponding conditions are set.
 
-Each group has a unique id and name. 
+Each group has a unique id and name.
 
 **_group object_**
 
@@ -14,7 +14,7 @@ Field name |     Type    | Description
 --------- | ----------- | -----------
 **active** | boolean | The status of the group (active = true, inactive = false)
 **date_created** | timestamp | The timestap of the creation of the group
-**date_updated** | timestamp | The timestamp of the last update of group 
+**date_updated** | timestamp | The timestamp of the last update of group
 **id** | integer | The group id
 **name** | string | The name of the group
 
@@ -75,8 +75,8 @@ Get the information of a specific group.
 
 #### Resource
 
-Method | Url | Description
-------- | -------- |
+Method | Url
+------- | --------
 GET | https://{BASE_URL}/api/v2/groups/{GROUP_ID}
 
 
@@ -113,7 +113,7 @@ curl -X GET \
 
 ## Get all groups
 
-Return a collection of all active/inactive groups. 
+Return a collection of all active/inactive groups.
 
 ### Request
 
@@ -121,8 +121,8 @@ Return a collection of all active/inactive groups.
 
 Method | Url | Description
 ------- | -------- | -------
-GET | https://{BASE_URL}/api/v2/groups | Get all active groups 
-GET | https://{BASE_URL}/api/v2/groups?deleted=true | Get all inactive groups 
+GET | https://{BASE_URL}/api/v2/groups | Get all active groups
+GET | https://{BASE_URL}/api/v2/groups?deleted=true | Get all inactive groups
 
 ### Response
 
@@ -190,7 +190,7 @@ Field name | Type | Description
 ### Response
 
 #### Content
-The updated _group object_. 
+The updated _group object_.
 
 #### Code
 
@@ -274,7 +274,7 @@ Field name |     Type    | Description
 
 #### Content
 
-A _group object_. 
+A _group object_.
 
 #### Code
 
