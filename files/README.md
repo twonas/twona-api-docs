@@ -27,7 +27,7 @@ Field name |     Type    | Description
 **filesize** | string | File size in human readable format
 **size** | int | File size (in bytes)
 **date** | timestamp | Timestamp of the creation of the file
-***metadata*** | object | If present, metadata associated with the file (added by the user)
+**metadata** | object | If present, metadata associated with the file (added by the user)
 
 ## Get a file
 
