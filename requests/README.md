@@ -1,4 +1,4 @@
-# Working with users
+# Working with Requests
 
 - [Terminology](#terminology)
 - [Get one Request (GET))](#get-one-request)
@@ -10,40 +10,42 @@
 
 ### Request
 
-**Request**: // TODO
+**Request**: A Request is used to group, track and aggregate the process of creating assets (or artworks). A request will follow the steps defined in a workflow and will link together Versions, Attachments, Messages, Approvals and anything else related to a specific project.
 
 **_request object_**
 
 Field name |     Type    | Description
 --------- | ----------- | -----------
-**id** | integer | Id of the Request
-**labels** | array | Collection of labels
-**labels_text** | string | Coma separated labels
-**info** | string | Description of the Request (HTML text)
-**date_created** | ISO 8601 date | The timestamp when Request was create
-**priority** | float | Order
-**status** | Status Object | Current status of the Request
-**user_owner** | User Object | Request was create by
+**id** | integer | Id (unique) of the Request
+**labels** | array | Collection of assigned labels 
+**labels_text** | string | Coma separated labels as text
+**info** | string | Info field (HTML text)
+**date_created** | ISO 8601 date | Timestamp of creation
+**priority** | float | Priority (relative to other requests)
+**status** | Status Object | Current status (step in the workflow) of the Request
+**user_owner** | User Object | Creator of the request
 
 ### Status
 
-**Status**: // TODO
+**Status**: The Status represents the current state of the request within the assigned workflow.
 
 **status object_**
 
 Field name |     Type    | Description
 --------- | ----------- | -----------
-**id** | string | The unique identifier (id) of the status
-**name** | string | The name of the status
-**color** | string | Color of the status
+**id** | string | Id (unique) of the Status
+**name** | string | Status name (the step in the workflow)
+**color** | string | HEX Color
 
 ### Version
 
+DO WE NEED THIS HERE?
+
 // Link to object version on '../versions/README.md'
 
-## Get one Request
+## Get a Request
 
-Return the details of a specific request (by its unique request id)
+Get the information of a specific request.
 
 ### Request
 
@@ -127,9 +129,9 @@ curl -X GET \
 }
 ```
 
-## Get files from a Request
+## Get files (attachments)
 
-Return the list of all active files from a request.
+Return a list of all active files (attachments) in a request.
 
 ### Request
 
@@ -195,9 +197,9 @@ curl -X GET \
 ]
 ```
 
-## Search requests
+## Get all Requests
 
-Search requests.
+Return the list of all requests in the organization.
 
 ### Request
 
@@ -217,7 +219,7 @@ Field name |     Type    | Description
 
 #### Filtering list
 
-To filter the list of users, you can add a conditional query `q` as field:query (#search-queries).
+To filter the list of requests, you can add a conditional query `q` as field:query (#search-queries).
 
 Allowed filters:
 
@@ -227,6 +229,8 @@ Field | Type | Description
 **workflow**   | integer | Id of the workflow
 **user_owner**   | integer | Id of the owner
 **label**   | integer | Id of the label
+
+To order the list of requests, you can add a short query `short_by` as field1,field2 (#search-queries).
 
 Order fields:
 
