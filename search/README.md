@@ -43,7 +43,7 @@ Example    |  Modifier
 
 ### Sort field
 
-You can sort the result set by using: **sort_by=[field1,fild2]**  
+You can sort the result set by using: **sort_by=[field1,field2]**  
 
 By default the order is ASC. You can use `-` to specify the order DESC before the field as in the example below.
 

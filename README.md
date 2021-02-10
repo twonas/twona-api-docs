@@ -5,6 +5,7 @@
 - **General**
     - [Basic description](#basic-description)
     - [Operation](#operation)
+    - [Authentication](authentication/README.md)
 - **Settings**
     - [User management](users/README.md)
     - [Group management](groups/README.md)
