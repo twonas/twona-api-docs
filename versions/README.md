@@ -1,4 +1,4 @@
-# Working with users
+# Working with Versions
 
 - [Terminology](#terminology)
 - [Get one Version (GET))](#get-one-version)
@@ -10,9 +10,9 @@
 
 ### Version
 
-**Request**: // TODO
+**Version**: A version is a collection of files that are considered a set to which a specific state and version number (a human one and a computer one) is assigned. Versions are used to ensure the correct files are used. A version is identified by a unique ID and a user number.number model (ex. Version 1.2) and is defined by the set of labels assigned to it. A version must contain AT LEAST one file.
 
-**_request object_**
+**_version object_**
 
 Field name |     Type    | Description
 --------- | ----------- | -----------
@@ -21,26 +21,26 @@ Field name |     Type    | Description
 **labels_text** | string | Coma separated labels
 **version_number** | integer | Version number
 **subversion_number** | integer | Subversion number
-**version** | string | Version dot subversion
-**date_created** | ISO 8601 date | The timestamp when Version was create
-**status** | Status Object | Current status of the Request
-**user_owner** | User Object | Request was create by
+**version** | string | String format Version dot Subversion
+**date_created** | ISO 8601 date | The timestamp of the creation of the version
+**status** | Status Object | Current status of the Version (THIS IS WRONG)
+**user_owner** | User Object | User who uploaded the version
 
 ### Status
 
-**Status**: // TODO
+**Status**: A version can be set to a specific Status (ex. Approved). This determines the purpose of the Version and can be used to filter, limit access, etc.
 
 **status object_**
 
 Field name |     Type    | Description
 --------- | ----------- | -----------
-**id** | string | The unique identifier (id) of the status
+**id** | string | Id (unique) of the status
 **name** | string | The name of the status
-**color** | string | Color of the status
+**color** | string | HEX Color 
 
 ## Get one Version
 
-Return the details of a specific version (by its unique version id)
+Return the details of a specific version.
 
 ### Request
 
@@ -125,7 +125,7 @@ curl -X GET \
 
 ## Get files from a Version
 
-Return the list of all active files from a version.
+Return the list of all files in a version.
 
 ### Request
 
@@ -191,11 +191,11 @@ curl -X GET \
 ]
 ```
 
-## Search versions
+## Get all Versions
 
-Search versions.
+Return the list of all versions in the organization.
 
-### Request
+### Version
 
 #### Resource
 
@@ -213,7 +213,7 @@ Field name |     Type    | Description
 
 #### Filtering list
 
-To filter the list of users, you can add a conditional query `q` as field:query (#search-queries).
+To filter the list of versions, you can add a conditional query `q` as field:query (#search-queries).
 
 Allowed filters:
 
@@ -221,6 +221,8 @@ Field | Type | Description
 ------ | ---------- | ----------
 **status**  | integer | Id of the status
 **label**   | integer | Id of the label
+
+To order the list of versions, you can add a short query `short_by` as field1,field2 (#search-queries).
 
 Order fields:
 
