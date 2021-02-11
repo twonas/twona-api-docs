@@ -363,7 +363,10 @@ GET | https://{BASE_URL}/api/v2/requests/status | Get all request status
 
 #### Inputs
 
-Empty
+Field name |     Type    | Description
+--------- | ----------- | -----------
+**workflow** (optional) | Integer | Id (unique) of the workflow 
+
 
 ### Response
 
