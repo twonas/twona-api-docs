@@ -1,28 +1,25 @@
 # Authentication
 
-// TODO
-// If token is invalid the response will be 401 Unauthorized
+Authentication is done with an API token that is sent in the header of each HTTP request under Access-token. The token is assigned per user and inherits all permissions of the user. A token can be obtained directly on Twona under Settings>APITokens.
+
+If a token is invalid, Twona will issue a 401 Unauthorized response.
 
 ## Terminology
 
 ### Organization
 
-**Organization**: // TODO
+**Organization**: An Organization is used to aggregate all aspects of your account. The name of the Organization will typically the name of your company :-)
 
 **_organization object_**
 
 Field name |     Type    | Description
 --------- | ----------- | -----------
-**id** | integer | Id of the organization
-**name** | string | Organization name
-
-## Context
-
-// Explain about all data getted will be allowed
+**id** | integer | Id (unique) of the organization
+**name** | string | Name of the Organization
 
 ## Get a Token data (testing the API)
 
-Return user and organization data linked with access-token.
+You can test the connectivity with Twona by requesting a session call which will return the user and organization data.
 
 ### Request
 
@@ -40,7 +37,7 @@ Empty
 
 #### Content
 
-A _user object__ and _organization_object_.
+A _user object__ and a _organization object_.
 
 #### Code
 
