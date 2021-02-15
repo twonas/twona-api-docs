@@ -2,20 +2,22 @@
 
 ## Index
 
-- **General**
-    - [Basic description](#basic-description)
-    - [Operation](#operation)
+- **Organization Management**
+    - [Short Description](#short-description)
     - [Authentication](authentication/README.md)
-- **Settings**
+    - [Login](login/README.md)
+    - [Workflows](workflows/README.md)
+- **User Management**
     - [User management](users/README.md)
     - [Group management](groups/README.md)
-- **Core resources**
+- **Requests and Versions**
+    - [Requests Data](requests/README.md)
+    - [Versions Data](versions/README.md)
+- **File Management**
     - [Files](files/README.md)
-- **Filtering**
+- **Filtering and Ordering**
     - [Search queries](search/README.md)
 
-- **Third party integration**
-    - [Login](login/README.md)
 
 ## Short Description
 
