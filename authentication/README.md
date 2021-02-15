@@ -37,7 +37,7 @@ Empty
 
 #### Content
 
-A _user object_(../users/README.md#user) and a _organization object_.
+A [_user object_](../users/README.md#user) and a _organization object_.
 
 #### Code
 
