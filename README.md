@@ -17,9 +17,7 @@
 - **Third party integration**
     - [Login](login/README.md)
 
-## Basic description
+## Short Description
 
-The API will provide a full management of users and groups of users within your organization.
+The Twona API allows you manage many aspects of your Organization, from user and group management, data related to requests and file management.
 
-## Operation
-The API manages the new users **invitations**, the team **users**, the team **groups**, **users within groups** and **users files** and working with them. We will separate each action request in this documentation.
