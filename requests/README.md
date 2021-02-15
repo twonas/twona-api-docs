@@ -37,12 +37,6 @@ Field name |     Type    | Description
 **name** | string | Status name (the step in the workflow)
 **color** | string | HEX Color
 
-### Version
-
-DO WE NEED THIS HERE?
-
-// Link to object version on '../versions/README.md'
-
 ## Get a Request
 
 Get the information of a specific request.
