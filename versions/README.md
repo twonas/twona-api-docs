@@ -30,7 +30,7 @@ Field name |     Type    | Description
 
 **Status**: A version can be set to a specific Status (ex. Approved). This determines the purpose of the Version and can be used to filter, limit access, etc.
 
-**status object_**
+**_status object_**
 
 Field name |     Type    | Description
 --------- | ----------- | -----------
