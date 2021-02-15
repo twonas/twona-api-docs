@@ -37,7 +37,7 @@ Empty
 
 #### Content
 
-A _user object__ and a _organization object_.
+A _user object_ and a _organization object_.
 
 #### Code
 
