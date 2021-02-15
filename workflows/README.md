@@ -8,9 +8,9 @@
 
 ### Workflow
 
-**Workflow**: // TODO
+**Workflow**: A workflow defines the pathway of a request. It is a constellation of potential transitions between Request Statuses, thus a Request can only be placed in a "target" Status if there is a transition with the current Status as "origin" and the corresponding "target". A workflow typically represents a specific process in your Organization and can be an object of permission restrictions.
 
-**_request object_**
+**_workflow object_**
 
 Field name |     Type    | Description
 --------- | ----------- | -----------
@@ -20,13 +20,13 @@ Field name |     Type    | Description
 
 ### Transitions
 
-**Transition**: // TODO
+**Transition**: A transition represents the potential to change the Status of a request from an "origin" Status to a "target" Status. Transitions a can be objects of permission restrictions
 
 **_transition object_**
 
 Field name |     Type    | Description
 --------- | ----------- | -----------
-**id** | string | The unique identifier (id) of the transition
+**id** | string | Id (unique) of the transition
 **origin** | Status object | Origin status
 **target** | Status object | Target status
 
