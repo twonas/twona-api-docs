@@ -20,7 +20,7 @@ Concatenation | Description
 --------- | ----------
 `+`    | AND
 `-`    | AND NOT
-`|`    | OR (start a new condition block)
+<code>&#124;</code> | OR (start a new condition block)
 
 ### Modifiers
 
