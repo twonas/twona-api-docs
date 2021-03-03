@@ -23,7 +23,7 @@ Field name |     Type    | Description
 **subversion_number** | integer | Subversion number
 **version** | string | String format Version dot Subversion
 **date_created** | ISO 8601 date | The timestamp of the creation of the version
-**status** | Status Object | Current status of the Version (THIS IS WRONG)
+**status** | Status Object | Current status of the Version 
 **user_owner** | User Object | User who uploaded the version
 
 ### Status
