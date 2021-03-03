@@ -168,7 +168,7 @@ GET | https://{BASE_URL}/api/v2/files
 
 Field name |     Type    | Description
 --------- | ----------- | -----------
-**q** (optional) | string | Search query to filter results based on conditions ([details](#search-queries))
+**q** (optional) | string | Search query to filter results based on conditions ([details](../search/README.md#search-queries))
 
 #### Filtering list
 
