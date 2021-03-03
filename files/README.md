@@ -154,7 +154,7 @@ If the file id is a persisted file, the response will be a _file Object_
 
 ## Get all files
 
-Return all the files.
+Return all the files from the organization.
 
 ### Request
 
