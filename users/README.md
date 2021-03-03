@@ -215,7 +215,7 @@ Field name |     Type    | Description
 
 #### Filtering list
 
-To filter the list of users, you can add a conditional query `q` as field:query (#search-queries).
+To filter the list of users, you can add a conditional query `q` as field:query ([details](../search/README.md#search-queries)).
 
 Allowed filters:
 
