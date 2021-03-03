@@ -1,10 +1,10 @@
 # Working with Requests
 
 - [Terminology](#terminology)
-- [Get one Request (GET))](#get-one-request)
-- [Get files from a Request (GET)](#get-files-from-a-request)
-- [Search Requests (GET)](#)
-- [Get all Request Status (GET)](#)
+- [Get one Request (GET))](#get-a-request)
+- [Get files from a Request (GET)](#get-files-attachments)
+- [Get all requests (GET)](#get-all-requests)
+- [Get all Status (GET)](#get-all-status)
 
 ## Terminology
 
@@ -29,7 +29,7 @@ Field name |     Type    | Description
 
 **Status**: The Status represents the current state of the request within the assigned workflow.
 
-**status object_**
+**_status object_**
 
 Field name |     Type    | Description
 --------- | ----------- | -----------
