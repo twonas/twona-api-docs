@@ -4,7 +4,7 @@
 - [Get a file (GET)](#get-a-file)
 - [Download a file (GET)](#download-a-file)
 - [Add metadata to File (PUT)](#add-metadata-to-file)
-- [Get all organization's files (GET)](#get-all-organizations-files)
+- [Get all organization's files (GET)](#get-all-files)
 
 - **Uploading files**
     - [Request upload a file (POST)](uploading-files.md#requesting-an-upload-resource)
