@@ -211,7 +211,7 @@ GET | https://{BASE_URL}/api/v2/users?deleted=true | Get all inactive users
 Field name |     Type    | Description
 --------- | ----------- | -----------
 **deleted** (optional)  | boolean | Return all inactive users
-**q** (optional) | string | Filter the users to be returned with matching conditions ([details](#search-queries))
+**q** (optional) | string | Filter the users to be returned with matching conditions ([details](../search/README.md#search-queries))
 
 #### Filtering list
 
