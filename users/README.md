@@ -9,7 +9,7 @@
 - [Update one user (PUT)](#update-one-user)
 - [Deactivate one user (DELETE)](#deactivate-one-user)
 - [Activate one user (POST)](#activate-one-user)
-- [Add users bulk (POST)](#add-users-bulk)
+- [Add users bulk (POST)](#add-users-in-bulk)
 
 ## Terminology
 
