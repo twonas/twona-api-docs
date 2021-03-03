@@ -3,8 +3,8 @@
 - [Terminology](#terminology)
 - [Get one Version (GET))](#get-one-version)
 - [Get files from a Version (GET)](#get-files-from-a-version)
-- [Search Versions (GET)](#)
-- [Get all Versions Status (GET)](#)
+- [Get all Versions (GET)](#get-all-versions)
+- [Get all Statuses (GET)](#get-all-status)
 
 ## Terminology
 
