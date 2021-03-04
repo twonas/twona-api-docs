@@ -8,7 +8,13 @@ Auto-key is a method based on a "magic link" that allows to log a user without p
 
 Request a link to log in a specific user.
 
-Twona will return an _Autokey_ to which you can append the access URL with an `href` query and encoding for url `urlencode` the section you want the user to access. An example in PHP: $urlToApp = $autologin."?href=".urlencode("https://app.twonas.com/app/p/apollo/upload?reference=".$referenceId."&target=".$targetId);
+Twona will return an _Autokey_ to which you can append the access URL with an `href` query and encoding for url `urlencode` the section you want the user to access.
+
+An example in PHP:
+
+```php
+$urlToApp = $autologin."?href=".urlencode("https://app.twonas.com/app/p/apollo/upload?reference=".$referenceId."&target=".$targetId);
+```
 
 ### Request
 
@@ -29,7 +35,7 @@ Field name |     Type    | Description
 #### Response headers
 Header key |     Type    | Description
 --------- | ----------- | -----------
-**Location** | string | Magic link. 
+**Location** | string | Magic link.
 
 #### Body content
 

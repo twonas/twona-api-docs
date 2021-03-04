@@ -8,8 +8,8 @@
     - [Login](login/README.md)
     - [Workflows](workflows/README.md)
 - **User Management**
-    - [User management](users/README.md)
-    - [Group management](groups/README.md)
+    - [User management](users/README.md#working-with-users)
+    - [Group management](groups/README.md#working-with-groups)
 - **Requests and Versions**
     - [Requests Data](requests/README.md)
     - [Versions Data](versions/README.md)
@@ -22,4 +22,3 @@
 ## Short Description
 
 The Twona API allows you manage many aspects of your Organization, from user and group management, data related to requests and file management.
-
