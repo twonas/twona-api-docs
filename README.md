@@ -4,19 +4,19 @@
 
 - **Organization Management**
     - [Short Description](#short-description)
-    - [Authentication](authentication/README.md)
-    - [Login](login/README.md)
-    - [Workflows](workflows/README.md)
+    - [Authentication](authentication/README.md#authentication)
+    - [Login](login/README.md#auto-key-for-login)
+    - [Workflows](workflows/README.md#working-with-users)
 - **User Management**
     - [User management](users/README.md#working-with-users)
     - [Group management](groups/README.md#working-with-groups)
 - **Requests and Versions**
-    - [Requests Data](requests/README.md)
-    - [Versions Data](versions/README.md)
+    - [Requests Data](requests/README.md#working-with-requests)
+    - [Versions Data](versions/README.mdworking-with-versions)
 - **File Management**
-    - [Files](files/README.md)
+    - [Files](files/README.md#working-with-files)
 - **Filtering and Ordering**
-    - [Search queries](search/README.md)
+    - [Search queries](search/README.md#search-and-sort-queries)
 
 
 ## Short Description
