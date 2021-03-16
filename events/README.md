@@ -10,7 +10,7 @@
 
 ### Event
 
-An event is an action that has occured in your account. This can be trigged by a user action or as a result of an automation rule. In the case of an event triggered by an automation rule, the user that triggered the action that triggered the rule is considered as the user that triggered the event. 
+An event is an action that has occured in your account. This can be trigged by a user action or as a result of an automation rule. In the case of an event triggered by an automation rule, the user that triggered the action that triggered the rule is considered as the user that triggered the event.
 
 **_event object_**
 
@@ -245,11 +245,10 @@ Http Status | Details
 
 #### Request
 ```sh
-# Get requests from the workflow 31 order by id desc
 curl -X GET \
   https://{BASE_URL}/api/v2/events \
   -H 'access-token: {ACCESS_TOKEN}' \
-  --data-urlencode 'q=request:31' \
+  --data-urlencode 'q=request:3132' \
   --data-urlencode 'type=requests.status.updated'
 ```
 
