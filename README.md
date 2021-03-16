@@ -7,6 +7,7 @@
     - [Authentication](authentication/README.md#authentication)
     - [Login](login/README.md#auto-key-for-login)
     - [Workflows](workflows/README.md#working-with-users)
+    - [Event Tracking](events/README.md#event-tracking)
 - **User Management**
     - [User management](users/README.md#working-with-users)
     - [Group management](groups/README.md#working-with-groups)

@@ -17,7 +17,7 @@
 Field name |     Type    | Description
 --------- | ----------- | -----------
 **id** | integer | Id (unique) of the Request
-**labels** | array | Collection of assigned labels 
+**labels** | array | Collection of assigned labels
 **labels_text** | string | Coma separated labels as text
 **info** | string | Info field (HTML text)
 **date_created** | ISO 8601 date | Timestamp of creation
@@ -224,7 +224,7 @@ Field | Type | Description
 **user_owner**   | integer | Id of the owner
 **label**   | integer | Id of the label
 
-To order the list of requests, you can add a short query `short_by` as field1,field2 (#search-queries).
+To order the list of requests, you can add a sort query `sort_by` as field1,field2 (#search-queries).
 
 Order fields:
 
@@ -359,7 +359,7 @@ GET | https://{BASE_URL}/api/v2/requests/status | Get all request status
 
 Field name |     Type    | Description
 --------- | ----------- | -----------
-**workflow** (optional) | Integer | Id (unique) of the workflow 
+**workflow** (optional) | Integer | Id (unique) of the workflow
 
 
 ### Response
