@@ -1,9 +1,9 @@
 # Event Tracking
 
 - [Terminology](#terminology)
-- [Types and properties](#types-and-properties)
-- [Get one Event (GET))](#get-a-event)
-- [Get properties from an Event (GET)](#get-a-properties)
+- [Types and properties](#event-types-and-properties)
+- [Get one Event (GET))](#get-an-event)
+- [Get properties from an Event (GET)](#get-properties)
 - [Get all Events (GET)](#get-all-events)
 
 ## Terminology
