@@ -10,42 +10,42 @@
 
 ### Event
 
-**EventTrack**: An EventTrack is a event was success in Twona... (bla bla bla)
+An event is an action that has occured in your account. This can be trigged by a user action or as a result of an automation rule. In the case of an event triggered by an automation rule, the user that triggered the action that triggered the rule is considered as the user that triggered the event. 
 
 **_event object_**
 
 Field name |     Type    | Description
 --------- | ----------- | -----------
 **id** | string | Id (unique) of the event
-**date** | ISO 8601 date | Timestamp of creation
+**date** | ISO 8601 date | Timestamp of the logging of the event (can differ slightly from timesampt of the action)
 **type** | string | Type of event
-**user** | User Object | User who dispatch the event
+**user** | User Object | User that triggered the event
 
-## Types and properties
+## Event Types and Properties
 
-All events have some properties... (bla bla bla) The event's types are in plural.
+Below you can find the list of supported events along with their properties. The properties of an event are a collection of objects related to the event.
 
 Event type |     Description    | Properties
 ---------- | ------------------ | -----------
 **Requests** |                  |
-`requests.added` | A Request added | `request` (Request Object)
-`requests.labels.added` | A label (one label) is added to the Request | `request` (Request Object), `label` (Label Object)
-`requests.labels.remove` | A label (one label) is removed from the Request | `request` (Request Object), `label` (Label Object)
-`requests.files.added` | A file (one file) is added to the Request | `request` (Request Object), `file` (File Object)
-`requests.files.removed` | A file (one file) is remove from the Request | `request` (Request Object), `file` (File Object)
-`requests.status.updated` | Request Status is updated in Request | `request` (Request Object), `status` (Status Object)
-`requests.messages.added` | A message is added to the Request | `request` (Request Object), `message` (Message Object)
-`requests.messages.removed` | A message is removed from the Request |  `request` (Request Object), `message` (Message Object)
+`requests.added` | A Request was added | `request` (Request Object)
+`requests.labels.added` | A label (one label) is added to a Request | `request` (Request Object), `label` (Label Object)
+`requests.labels.remove` | A label (one label) is removed from a Request | `request` (Request Object), `label` (Label Object)
+`requests.files.added` | A file (one attachment) is added to a Request | `request` (Request Object), `file` (File Object)
+`requests.files.removed` | A file (one attachment) is deactivated in a Request | `request` (Request Object), `file` (File Object)
+`requests.status.updated` | The Status of a Request is changed | `request` (Request Object), `status` (Status Object)
+`requests.messages.added` | A message is left in a Request | `request` (Request Object), `message` (Message Object)
+`requests.messages.removed` | A message is deactivated from a Request |  `request` (Request Object), `message` (Message Object)
 **Versions** |          |        
 `versions.added` | A Version is added | `version` (Version Object)
-`versions.labels.added` | A label (one label) is added to Version | `version` (Version Object), `label` (Label Object)
-`versions.labels.removed` | A label (one label) is removed from Version | `version` (Version Object), `label` (Label Object)
-`versions.files.added` | A file is added to Version | `version` (Version Object), `file` (File Object)
-`versions.status.updated` | Version Status is updated in Version | `version` (Version Object), `status` (Status Object)
-`versions.messages.added` | A message is added to the Version | `version` (Version Object), `message` (Message Object)
-`versions.messages.removed` | A message is removed to the Version | `version` (Version Object), `message` (Message Object)
+`versions.labels.added` | A label (one label) is added to a Version | `version` (Version Object), `label` (Label Object)
+`versions.labels.removed` | A label (one label) is removed from a Version | `version` (Version Object), `label` (Label Object)
+`versions.files.added` | A file is added to a Version | `version` (Version Object), `file` (File Object)
+`versions.status.updated` | The Status of a Version is changed | `version` (Version Object), `status` (Status Object)
+`versions.messages.added` | A message is left in a Version | `version` (Version Object), `message` (Message Object)
+`versions.messages.removed` | A message is deactivated from a Version | `version` (Version Object), `message` (Message Object)
 
-## Get a Event
+## Get an Event
 
 Get the information of a specific event.
 
@@ -65,7 +65,7 @@ Empty.
 
 #### Content
 
-A _event object_.
+An _event object_.
 
 #### Code
 Http Status | Details
@@ -103,7 +103,7 @@ curl -X GET \
 
 ## Get properties
 
-Return a event's properties.
+Get the properties of an event.
 
 ### Request
 
@@ -121,7 +121,7 @@ Empty
 
 #### Content
 
-An object depend of the event type. If the Request or Version is not allowed, the call return a forbidden.
+The content of the event will be a collection of objects related to the event. If any of the related objects cannot be accesed due to permissions, a Forbidden error will be returned.
 
 #### Code
 
@@ -202,7 +202,7 @@ curl -X GET \
 
 ## Get all Events
 
-Return the list of all events.
+Get all the events in the organization.
 
 ### Request
 
@@ -216,18 +216,18 @@ GET | https://{BASE_URL}/api/v2/events
 
 Field name |     Type    | Description
 --------- | ----------- | -----------
-**type** (optional) | string | Property for filter result based on type of event
-**user** (optional) | string  | Property for filter result based on user of event
+**type** (optional) | string | Type of the event to be used as a filter
+**user** (optional) | string  | User that triggered the event to be used as filter
 **q** (optional) | string | Search query to filter results based on conditions ([details](../search/README.md#search-queries))
 **page** | (optional) | Page of results (default: 1)
 
 #### Filtering list
 
-To filter the list of events you can select any property of events. You can add a conditional query `q` as field:query (#search-queries).
+You can also filter by any property of the event with a conditional query `q` as field:query ([details](../search/README.md#search-queries)).
 
 Allowed filters: See in types and properties table.
 
-The order is date of event DESC.
+The list of events is ordered by date DESC.
 
 ### Response
 
