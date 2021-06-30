@@ -3,12 +3,8 @@
 - [Add group (POST)](#add-group)
 - [Get one group (GET)](#get-one-group)
 - [Get all groups (GET)](#get-all-groups)
-- [Update one group (PUT)](#update-one-group)
-- [Deactivate one group (DELETE)](#deactivate-one-group)
-- [Activate one group (POST)](#activate-one-group)
 - [Get users in group (GET)](#get-users-in-group)
 - [Add one user to group (POST)](#add-one-user-to-group)
-- [Deactivate one user in group (DELETE)](#deactivate-one-user-in-group)
 
 ## Terminology
 
@@ -22,7 +18,6 @@ Each group has a unique id and name.
 
 Field name |     Type    | Description
 --------- | ----------- | -----------
-**active** | boolean | The status of the group (active = true, inactive = false)
 **date_created** | timestamp | The timestap of the creation of the group
 **date_updated** | timestamp | The timestamp of the last update of group
 **id** | integer | The group id
@@ -69,7 +64,6 @@ curl -X POST \
 #### Response
 ```
 {
-    "active": true,
     "date_created": "2019-07-01T11:47:04+00:00",
     "date_updated": "2019-07-01T11:47:04+00:00",
     "id": 160,
@@ -113,7 +107,6 @@ curl -X GET \
 #### Response
 ```
 {
-    "active": true,
     "date_created": "2019-07-01T11:43:04+00:00",
     "date_updated": "2019-07-01T11:43:04+00:00",
     "id": 111,
@@ -123,7 +116,7 @@ curl -X GET \
 
 ## Get all groups
 
-Return a collection of all active/inactive groups.
+Return a collection of all groups.
 
 ### Request
 
@@ -131,8 +124,7 @@ Return a collection of all active/inactive groups.
 
 Method | Url | Description
 ------- | -------- | -------
-GET | https://{BASE_URL}/api/v2/groups | Get all active groups
-GET | https://{BASE_URL}/api/v2/groups?deleted=true | Get all inactive groups
+GET | https://{BASE_URL}/api/v2/groups | Get all groups
 
 ### Response
 
@@ -153,164 +145,24 @@ Http Status | Details
 curl -X GET \
   https://{BASE_URL}/api/v2/groups \
   -H 'access-token: {ACCESS_TOKEN}'
-
-curl -X GET \
-    https://{BASE_URL}/api/v2/groups?deleted=true \
-    -H 'access-token: {ACCESS_TOKEN}'
 ```
 
 #### Response
 ```
 [
     {
-        "active": true,
         "date_created": "2019-07-01T11:47:04+00:00",
         "date_updated": "2019-07-01T11:47:04+00:00",
         "id": 111,
         "name": "Main group"
     },
     {
-        "active": true,
         "date_created": "2019-07-01T11:47:04+00:00",
         "date_updated": "2019-07-01T11:47:04+00:00",
         "id": 160,
         "name": "new group's name"
     }
 ]
-```
-
-## Update one group
-
-Update the data of a specific group.
-
-### Request
-#### Resource
-
-Method | Url
-------- | --------
-PUT | https://{BASE_URL}/api/v2/groups/{GROUP_ID}
-
-#### Inputs
-
-Field name | Type | Description
---------- | ----------- | -----------
-**name** (required) | string | The NEW name of the group.
-**active** (optional) | boolean | The NEW status of the group.
-
-### Response
-
-#### Content
-The updated _group object_.
-
-#### Code
-
-Http Status | Details
------------ | ----------
-201 | ok
-
-### Examples
-
-#### Request
-```
-curl -X PUT \
-  https://{BASE_URL}/api/v2/groups/{GROUP_ID} \
-  -H 'access-token: {ACCESS_TOKEN}'
-  -d '{ "name": "New name",
-        "active": false }'
-```
-#### Response
-```
-{
-    "active": false,
-    "date_created": "2019-07-01T11:47:04+00:00",
-    "date_updated": "2019-07-01T11:47:04+00:00",
-    "id": 160,
-    "name": "New name"
-}
-```
-
-## Deactivate one group
-
-Deactivate a specific group. The users in this group will still be active but all conditions associated with the group will stop executing. Users cannot be added to a deactivated group.
-
-### Request
-
-#### Resource
-
-Method | Url
-------- | --------
-DELETE | https://{BASE_URL}/api/v2/groups/{GROUP_ID}
-
-### Response
-
-#### Content
-
-Empty
-
-#### Code
-
-Http Status | Details
------------ | ----------
-200 | ok
-
-### Examples
-
-#### Request
-```
-curl -X DELETE \
-  https://{BASE_URL}/api/v2/groups/{GROUP_ID} \
-  -H 'access-token: {ACCESS_TOKEN}'
-```
-
-## Activate one group
-
-Activate a specific group. Users can be added to an active group.
-
-### Request
-
-#### Resource
-
-Method | Url
-------- | --------
-POST | https://{BASE_URL}/api/v2/groups
-
-#### Inputs
-
-Field name |     Type    | Description
---------- | ----------- | -----------
-**id** (required) | integer | Group id
-
-### Response
-
-#### Content
-
-A _group object_.
-
-#### Code
-
-Http Status | Details
------------ | ----------
-200 | ok
-
-### Examples
-
-#### Request
-```
-curl -X POST \
-  https://{BASE_URL}/api/v2/groups \
-  -H 'access-token: {ACCESS_TOKEN}' \
-  -d '{"id": 160}'
-```
-
-#### Response
-```
-{
-    "active": true,
-    "date_created": "2019-07-01T12:47:10+00:00",
-    "date_updated": "2019-07-02T08:22:49+00:00",
-    "id": 158,
-    "name": "test July updated new"
-}
 ```
 
 ## Get users in group
@@ -412,36 +264,4 @@ curl -X POST \
     "name": "User name",
     "position": "User position"
 }
-```
-
-## Deactivate one user in group
-
-Dactivate one user in a specific group. The user will no longer be part of set of active users in a group.
-
-### Request
-
-#### Resource
-
-Method | Url
-------- | --------
-DELETE | https://{BASE_URL}/api/v2/groups/{GROUP_ID}/users/{USER_ID}
-
-### Response
-
-#### Content
-
-Empty
-
-#### Code
-Http Status | Details
------------ | ----------
-204 | No content
-
-### Examples
-
-#### Request
-```
-curl -X DELETE \
-  https://{BASE_URL}/api/v2/groups/{GROUP_ID}/users/{USER_ID} \
-  -H 'access-token: {ACCESS_TOKEN}'
 ```
