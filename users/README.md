@@ -25,7 +25,7 @@ Field name |     Type    | Description
 **organization_id** | integer | The identifier (id) of the organization to which the user would be added
 **status_code** | integer | Internal code to identify the status of the invitation: 2/3 (TODO: which codes?)
 **status_text** | string | Internal text to display the status of the invitation: Expired/Pending (TODO: which texts?)
-**users_group_id** | integer | The initial group assigned for the user (TODO: you send an array but get only an integer, is it the first one?)
+**users_groups_ids** | array | The initial groups assigned for the user
 
 ### User
 
@@ -134,22 +134,20 @@ curl -X GET \
     {
         "date": "2019-06-28T10:27:21+0200",
         "email": "test1@twonas.com",
-        "hash": "98dadeas37faa5",
         "name": "test1 name",
         "organization_id": 1,
         "status_code": 2,
         "status_text": "Expired",
-        "users_group_id": 12
+        "users_groups_ids": [12, 24]
     },
     {
         "date": "2019-06-18T09:48:33+0200",
         "email": "test2@twonas.com",
-        "hash": "f7c92315b32e",
         "name": "test2 name",
         "organization_id": 1,
         "status_code": 2,
         "status_text": "Expired",
-        "users_group_id": 12
+        "users_groups_ids": [12]
     }
 ]
 ```
