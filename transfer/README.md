@@ -1,15 +1,15 @@
-# Feedback
+# Transfer
 
 - [Terminology](#terminology)
-- [Share a feedback (POST)](#share-an-approval)
+- [Transfer a file (POST)](#transfer-a-file)
 
 ## Terminology
 
-### Feedback
+### Transfer
 
-**Feedback**: "Feedback" is used to share artworks or files with users in and out the system and ask for comments or approval of them.
+**Transfer**: "Transfer" is used to share artworks or files with users in and out the system.
 
-**feedback object_**
+**transfer object_**
 
 Field name |     Type    | Description
 --------- | ----------- | -----------
@@ -17,20 +17,13 @@ Field name |     Type    | Description
 **subject** | string | Short explain of the share
 **message** | string | Message with all details of the share
 **files** | array | Collection of files shared with users
-**allow_see** | boolean | if the user who will receive the share can see comments from other users
-**get_approval** | boolean | if the user who will receive the share can approval an artwork
-**get_comments** | boolean | if the user who will receive the share can comment
-
-## Request Feedback
-
-Request for a feedback
 
 ### Request
 #### Resource
 
 Method | Url
 ------- | --------
-POST | https://{BASE_URL}/api/v2/p/feedback
+POST | https://{BASE_URL}/api/v2/p/transfer
 
 #### Inputs
 
@@ -40,13 +33,10 @@ Field name |     Type    | Description
 **subject** (required) | string | subject of the email
 **message** (required) | string | text explain the matter of the share
 **files** (required) | array | if files shared with the emails
-**allow_see** (optional) | boolean | if the user who will receive the share can see comments from other users
-**get_approval** (optional) | boolean | if the user who will receive the share can approval an artwork
-**get_comments** (optional) | boolean | if the user who will receive the share can comment
 
 ### Response
 
-#### Codes
+#### Code
 Http Status | Details
 ----------- | ----------
 204 | No Content
@@ -55,16 +45,13 @@ Http Status | Details
 
 #### Request
 ```
-curl -X GET \
-  https://{BASE_URL}/api/v2/files/{FILE_ID} \
+curl -X POST \
+  https://{BASE_URL}/api/v2/p/transfer \
   -H 'access-token: {ACCESS_TOKEN}' \
   -d '{
         "emails": ["diego@twonas.com","miguel@twonas.com"],
         "subject": "transfer test from API",
         "message": "This is a test for Diego to test create a transfer from API",
         "files": [11111],
-        "allow_see":true,
-        "get_approval": true,
-        "get_comments": true
       }'
 ```
