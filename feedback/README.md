@@ -7,19 +7,7 @@
 
 ### Feedback
 
-**Feedback**: "Feedback" is used to share artworks or files with users in and out the system and ask for comments or approval of them.
-
-**feedback object_**
-
-Field name |     Type    | Description
---------- | ----------- | -----------
-**emails** | array | Collection of emails we want to share with
-**subject** | string | Short explain of the share
-**message** | string | Message with all details of the share
-**files** | array | Collection of files shared with users
-**allow_see** | boolean | if the user who will receive the share can see comments from other users
-**get_approval** | boolean | if the user who will receive the share can approval an artwork
-**get_comments** | boolean | if the user who will receive the share can comment
+**Feedback**: "Feedback" is used to share artworks or files with users in and out the system and ask for comments and approval or reject them.
 
 ## Request Feedback
 
@@ -39,7 +27,7 @@ Field name |     Type    | Description
 **emails** (required) | array | emails which will receive the share
 **subject** (required) | string | subject of the email
 **message** (required) | string | text explain the matter of the share
-**files** (required) | array | if files shared with the emails
+**files** (required) | array<integer> | id files uploaded in the organization shared with the emails
 **allow_see** (optional) | boolean | if the user who will receive the share can see comments from other users
 **get_approval** (optional) | boolean | if the user who will receive the share can approval an artwork
 **get_comments** (optional) | boolean | if the user who will receive the share can comment
@@ -55,14 +43,14 @@ Http Status | Details
 
 #### Request
 ```
-curl -X GET \
-  https://{BASE_URL}/api/v2/files/{FILE_ID} \
+curl -X POST \
+  https://{BASE_URL}/api/v2/p/feedback \
   -H 'access-token: {ACCESS_TOKEN}' \
   -d '{
-        "emails": ["diego@twonas.com","miguel@twonas.com"],
+        "emails": ["diego@twonas.com", "miguel@twonas.com"],
         "subject": "transfer test from API",
-        "message": "This is a test for Diego to test create a transfer from API",
-        "files": [11111],
+        "message": "This is a test for Diego to test create a feedback from API",
+        "files": [11111, 222222],
         "allow_see":true,
         "get_approval": true,
         "get_comments": true

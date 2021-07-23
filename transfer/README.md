@@ -32,7 +32,7 @@ Field name |     Type    | Description
 **emails** (required) | array | emails which will receive the share
 **subject** (required) | string | subject of the email
 **message** (required) | string | text explain the matter of the share
-**files** (required) | array | if files shared with the emails
+**files** (required) | array<integer> | id files uploaded in the organization shared with the emails
 
 ### Response
 

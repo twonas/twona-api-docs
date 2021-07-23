@@ -6,9 +6,9 @@
 - [Get all Versions (GET)](#get-all-versions)
 - [Get all Status (GET)](#get-all-status)
 
-- **Version approval**
-    - [Get all version approvals (GET)](version-approval.md#get-approvals)
-    - [Filtering version approvals (GET)](version-approval.md#filtering-list)
+- **Approval**
+    - [Get all version approvals (GET)](approval.md#get-approvals)
+    - [Filtering version approvals (GET)](approval.md#filtering-list)
 
 ## Terminology
 
