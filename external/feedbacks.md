@@ -1,4 +1,4 @@
-# Feedback
+# Feedbacks
 
 - [Terminology](#terminology)
 - [Share a feedback (POST)](#share-an-approval)

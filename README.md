@@ -18,8 +18,10 @@
     - [Files](files/README.md#working-with-files)
 - **Filtering and Ordering**
     - [Search queries](search/README.md#search-and-sort-queries)
-- **Share files and feedback**
-    - [Search queries](feedback/README.md#search-and-sort-queries)
+- **External**
+    - [Feedback requests](external/feedbacks.md)
+    - [Transfer files](external/transfer.md)
+
 
 
 ## Short Description
