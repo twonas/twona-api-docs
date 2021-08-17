@@ -1,4 +1,4 @@
-# Transfer
+# File Transfer
 
 - [Terminology](#terminology)
 - [Transfer a file (POST)](#transfer-a-file)
@@ -7,16 +7,18 @@
 
 ### Transfer
 
-**Transfer**: "Transfer" is used to share artworks or files with users in and out the system.
+**Transfer**: "Transfer" is used to send files with users of the system as well as people outside of the organisation. The transfer process is done via email that contains a link to download the selected files.
 
 **transfer object_**
 
+WHY DEFINE THIS OBJECT?
+
 Field name |     Type    | Description
 --------- | ----------- | -----------
-**emails** | array | Collection of emails we want to share with
-**subject** | string | Short explain of the share
-**message** | string | Message with all details of the share
-**files** | array | Collection of files shared with users
+**emails** | array | Collection of emails to send the files to
+**subject** | string | Short explanation that will be used in the email Subject
+**message** | string | Long text to include further explanations or details
+**files** | array | Collection of file IDs to be sent
 
 ### Request
 #### Resource
@@ -29,10 +31,10 @@ POST | https://{BASE_URL}/api/v2/p/transfer
 
 Field name |     Type    | Description
 --------- | ----------- | -----------
-**emails** (required) | array | emails which will receive the share
-**subject** (required) | string | subject of the email
-**message** (required) | string | text explain the matter of the share
-**files** (required) | array<integer> | id files uploaded in the organization shared with the emails
+**emails** (required) | array | Collection of emails to send the files to
+**subject** (required) | string | Short explanation that will be used in the email Subject
+**message** (required) | string | Long text to include further explanations or details
+**files** (required) | array<integer> | Collection of file IDs to be sent
 
 ### Response
 
