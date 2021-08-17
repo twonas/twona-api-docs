@@ -1,4 +1,4 @@
-# Feedbacks
+# Feedback and Approvals
 
 - [Terminology](#terminology)
 - [Share a feedback (POST)](#share-an-approval)
@@ -7,11 +7,11 @@
 
 ### Feedback
 
-**Feedback**: "Feedback" is used to share artworks or files with users in and out the system and ask for comments and approval or reject them.
+**Feedback**: this feature allows the users to request feedback in the form of notes on files, comments and file upload, aswell as formal approval/rejections with specific reasons. You can specify a collection of email addresses to which an email requesting the feedback will be sent along with a link to provide such feedback.
 
 ## Request Feedback
 
-Request for a feedback
+Send a request for feedback/approval to a collection of email addresses (can be users in your organisation, but it is not a requirement, the feature will also send the request to outside email addresses).
 
 ### Request
 #### Resource
@@ -22,15 +22,17 @@ POST | https://{BASE_URL}/api/v2/p/feedback
 
 #### Inputs
 
+WHAT ARE THE DEFAULT OPTIONS? ALL TRUE?
+
 Field name |     Type    | Description
 --------- | ----------- | -----------
-**emails** (required) | array | emails which will receive the share
-**subject** (required) | string | subject of the email
-**message** (required) | string | text explain the matter of the share
-**files** (required) | array<integer> | id files uploaded in the organization shared with the emails
-**allow_see** (optional) | boolean | if the user who will receive the share can see comments from other users
-**get_approval** (optional) | boolean | if the user who will receive the share can approval an artwork
-**get_comments** (optional) | boolean | if the user who will receive the share can comment
+**emails** (required) | array | Collection of emails to send the request for feedback/approval to
+**subject** (required) | string | Short explanation that will be used in the email Subject
+**message** (required) | string | Long text to include further explanations or details
+**files** (required) | array<integer> | Collection of file IDs to get feedback/approval from
+**allow_see** (optional) | boolean | TRUE to allow a transparent process where users see each other's feedback/approvals
+**get_approval** (optional) | boolean | TRUE to request a formal approval/rejection
+**get_comments** (optional) | boolean | TRUE to allow the users to comment on the files
 
 ### Response
 
@@ -49,7 +51,7 @@ curl -X POST \
   -d '{
         "emails": ["diego@twonas.com", "miguel@twonas.com"],
         "subject": "transfer test from API",
-        "message": "This is a test for Diego to test create a feedback from API",
+        "message": "This is a test for Diego to test the request for feedback via API",
         "files": [11111, 222222],
         "allow_see":true,
         "get_approval": true,
