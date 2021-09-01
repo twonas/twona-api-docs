@@ -6,9 +6,6 @@
 - [Cancel an invitation (DELETE)](#cancel-an-invitation)
 - [Get all users (GET)](#get-all-users)
 - [Get one user (GET)](#get-one-user)
-- [Update one user (PUT)](#update-one-user)
-- [Deactivate one user (DELETE)](#deactivate-one-user)
-- [Activate one user (POST)](#activate-one-user)
 - [Add users bulk (POST)](#add-users-in-bulk)
 
 ## Terminology
@@ -28,7 +25,7 @@ Field name |     Type    | Description
 **organization_id** | integer | The identifier (id) of the organization to which the user would be added
 **status_code** | integer | Internal code to identify the status of the invitation: 2/3 (TODO: which codes?)
 **status_text** | string | Internal text to display the status of the invitation: Expired/Pending (TODO: which texts?)
-**users_group_id** | integer | The initial group assigned for the user (TODO: you send an array but get only an integer, is it the first one?)
+**users_groups_ids** | array | The initial groups assigned for the user
 
 ### User
 
@@ -137,22 +134,20 @@ curl -X GET \
     {
         "date": "2019-06-28T10:27:21+0200",
         "email": "test1@twonas.com",
-        "hash": "98dadeas37faa5",
         "name": "test1 name",
         "organization_id": 1,
         "status_code": 2,
         "status_text": "Expired",
-        "users_group_id": 12
+        "users_groups_ids": [12, 24]
     },
     {
         "date": "2019-06-18T09:48:33+0200",
         "email": "test2@twonas.com",
-        "hash": "f7c92315b32e",
         "name": "test2 name",
         "organization_id": 1,
         "status_code": 2,
         "status_text": "Expired",
-        "users_group_id": 12
+        "users_groups_ids": [12]
     }
 ]
 ```
@@ -204,13 +199,11 @@ Return the list of all active/inactive users in the organization.
 Method | Url | Description
 ------- | -------- | -------
 GET | https://{BASE_URL}/api/v2/users | Get all active users
-GET | https://{BASE_URL}/api/v2/users?deleted=true | Get all inactive users
 
 #### Inputs
 
 Field name |     Type    | Description
 --------- | ----------- | -----------
-**deleted** (optional)  | boolean | Return all inactive users
 **q** (optional) | string | Filter the users to be returned with matching conditions ([details](../search/README.md#search-queries))
 
 #### Filtering list
@@ -243,10 +236,6 @@ Http Status | Details
 curl -X GET \
   https://{BASE_URL}/api/v2/users \
   -H 'access-token: {ACCESS_TOKEN}'
-
-curl -X GET \
-    https://{BASE_URL}/api/v2/users?deleted=true \
-    -H 'access-token: {ACCESS_TOKEN}'
 ```
 
 ##### Filtering: All users with email starting with "diego"
@@ -323,153 +312,6 @@ curl -X GET \
     "email": "user@mail.com",
     "id": "iDCHaRs",
     "name": "New user's name",
-    "position": "User position"
-}
-```
-
-## Update one user
-
-Update the personal data of a specific user (by its unique user id)
-
-### Request
-
-#### Resource
-
-Method | Url
-------- | --------
-PUT | https://{BASE_URL}/api/v2/users/{USER_ID}
-
-#### Inputs
-
-Field name |     Type    | Description
---------- | ----------- | -----------
-**name** (optional) | string | The NEW name of the user
-**telephone** (optional) | string | The NEW phone number of the user
-**position** (optional) | string | The NEW position of the user
-
-### Response
-
-#### Content
-
-The updated _user object_.
-
-#### Code
-
-Http Status | Details
------------ | ----------
-201 | Ok
-404 | Failed, user not found
-
-### Example
-
-#### Request
-
-```
-curl -X PUT \
-  https://{BASE_URL}/api/v2/users/{USER_ID} \
-  -H 'access-token: {ACCESS_TOKEN}'
-  -d '{ "name": "New user's name",
-        "telephone": "+34000000000",
-        "position": "User position" }'
-```
-
-#### Response
-```
-{
-    "date_created": "2019-06-20T10:37:21+00:00",
-    "email": "user@mail.com",
-    "id": "iDCHaRs",
-    "name": "New user's name",
-    "position": "User position"
-}
-```
-
-## Deactivate one user
-
-Deactivate (make inactive) a specific a specific user (by its unique user id). Once a user is deactivated, he will no longer be able to log in.
-
-### Resource
-
-#### Request
-
-Method | Url
-------- | --------
-DELETE | https://{BASE_URL}/api/v2/users/{USER_ID}
-
-#### Inputs
-
-Empty
-
-### Response
-
-#### Content
-
-Empty
-
-#### Codes
-
-Http Status | Details
------------ | ----------
-204 | No content
-
-### Examples
-
-#### Request
-
-```
-curl -X DELETE \
-  https://{BASE_URL}/api/v2/users/{USER_ID} \
-  -H 'access-token: {ACCESS_TOKEN}'
-```
-
-
-## Activate one user
-
-Activate (make active) a specific a specific user (by its unique user id). Once a user is activated, he will be able to log in.
-
-### Request
-
-#### Resource
-
-Method | Url
-------- | --------
-POST | https://{BASE_URL}/api/v2/users
-
-#### Inputs
-
-Field name |     Type    | Description
---------- | ----------- | -----------
-**id** (required) | string | The user id
-
-### Response
-
-#### Content
-
-The updated _user object_.
-
-#### Codes
-Http Status | Details
------------ | ----------
-201 | ok
-
-### Examples
-
-#### Request
-
-```
-curl -X POST \
-  https://{BASE_URL}/api/v2/users \
-  -H 'access-token: {ACCESS_TOKEN}'
-  -d '{ "id": "iDCHaRs" }'
-```
-
-#### Response
-```
-{
-    "date_created": "2019-06-20T10:37:21+00:00",
-    "email": "user@mail.com",
-    "id": "iDCHaRs",
-    "name": "user's name",
     "position": "User position"
 }
 ```
