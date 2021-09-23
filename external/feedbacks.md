@@ -33,13 +33,15 @@ Field name |     Type    | Description
 **allow_see** (optional) | boolean | TRUE to allow a transparent process where users see each other's feedback/approvals
 **get_approval** (optional) | boolean | TRUE to request a formal approval/rejection
 **get_comments** (optional) | boolean | TRUE to allow the users to comment on the files
+**from** (optional) | string | ID of User to do the request (if this field is filled then the request will be send when the user verify the email)
 
 ### Response
 
 #### Codes
 Http Status | Details
 ----------- | ----------
-204 | No Content
+204 | No Content (Ok)
+403 | Not allowed
 
 ### Examples
 
