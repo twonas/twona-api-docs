@@ -33,7 +33,7 @@ Field name |     Type    | Description
 **allow_see** (optional) | boolean | TRUE to allow a transparent process where users see each other's feedback/approvals
 **get_approval** (optional) | boolean | TRUE to request a formal approval/rejection
 **get_comments** (optional) | boolean | TRUE to allow the users to comment on the files
-**from** (optional) | string | ID of User to do the request (if this field is filled then the request will be send when the user verify the email)
+**from** (optional) | string | ID (hash format) of the user in which name the request for approval will be sent. If it is not specified, the approval will be sent from the user who owns the authentication token. If it is set, the specified user will receive an email to confirm his identity before the approval request is sent.
 
 ### Response
 
@@ -57,6 +57,7 @@ curl -X POST \
         "files": [11111, 222222],
         "allow_see":true,
         "get_approval": true,
-        "get_comments": true
+        "get_comments": true,
+        "from": "asd832hdEWx2"
       }'
 ```
