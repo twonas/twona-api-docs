@@ -30,10 +30,10 @@ Field name |     Type    | Description
 **subject** (required) | string | Short explanation that will be used in the email Subject
 **message** (required) | string | Long text to include further explanations or details
 **files** (required) | array<integer> | Collection of file IDs to get feedback/approval from
-**allow_see** (optional) | boolean | TRUE to allow a transparent process where users see each other's feedback/approvals
-**get_approval** (optional) | boolean | TRUE to request a formal approval/rejection
-**get_comments** (optional) | boolean | TRUE to allow the users to comment on the files
-**from** (optional) | string | ID (hash format) of the user in which name the request for approval will be sent. If it is not specified, the approval will be sent from the user who owns the authentication token. If it is set, the specified user will receive an email to confirm his identity before the approval request is sent.
+**allow_see** (optional) | boolean | TRUE to allow a transparent process where users see each other's feedback/approvals (default: `false`)
+**get_approval** (optional) | boolean | TRUE to request a formal approval/rejection (default: `false`)
+**get_comments** (optional) | boolean | TRUE to allow the users to comment on the files (default: `false`)
+**from** (optional) | string | ID of the user in which name the request for approval will be sent. If it is not specified, the approval will be sent from the user who owns the authentication token. If it is set, the specified user will receive an email to confirm his identity before the approval request is sent. (default: `null`)
 
 ### Response
 
