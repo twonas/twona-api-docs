@@ -22,8 +22,6 @@ POST | https://{BASE_URL}/api/v2/p/feedback
 
 #### Inputs
 
-WHAT ARE THE DEFAULT OPTIONS? ALL TRUE?
-
 Field name |     Type    | Description
 --------- | ----------- | -----------
 **emails** (required) | array | Collection of emails to send the request for feedback/approval to
