@@ -32,6 +32,7 @@ Field name |     Type    | Description
 **get_approval** (optional) | boolean | TRUE to request a formal approval/rejection (default: `false`)
 **get_comments** (optional) | boolean | TRUE to allow the users to comment on the files (default: `false`)
 **from** (optional) | string | ID of the user in which name the request for approval will be sent. If it is not specified, the approval will be sent from the user who owns the authentication token. If it is set, the specified user will receive an email to confirm his identity before the approval request is sent. (default: `null`)
+**external** (optional) | boolean | If this option is `true` the review page will be public (without login). (default: `false`)
 
 ### Response
 
