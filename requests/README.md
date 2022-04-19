@@ -5,6 +5,7 @@
 - [Get files from a Request (GET)](#get-files-attachments)
 - [Get all requests (GET)](#get-all-requests)
 - [Get all Status (GET)](#get-all-status)
+- [Upload new version (PUT)](#upload-new-version)
 
 ## Terminology
 
@@ -366,6 +367,70 @@ Field name |     Type    | Description
 
 #### Content
 A collection of _status object_.
+
+#### Code
+
+Http Status | Details
+----------- | ----------
+200 | OK
+
+### Examples
+
+#### Request
+```sh
+curl -X GET \
+  https://{BASE_URL}/api/v2/requests/status \
+  -H 'access-token: {ACCESS_TOKEN}'
+```
+
+#### Response
+```json
+[
+    {
+        "color": "#97CBC0",
+        "id": 371,
+        "name": "Received"
+    },
+    {
+       "color":"#E1AB32",
+       "id":542,
+       "name":"Checking"
+    },
+    {
+       "color":"#63B7AD",
+       "id":571,
+       "name":"Finished"
+    }
+]
+```
+
+## Upload New Version
+
+Upload a new version from a given project.
+
+### Request
+
+#### Resource
+
+Method | Url | Description
+------- | -------- | -------
+POST | https://{BASE_URL}/api/v2/requests/{id}/version | Upload New Version
+
+#### Inputs
+
+Field name |     Type    | Description
+--------- | ----------- | -----------
+**files** | Array | Array of files of the version
+**labels** | Array | Array of labels to use
+**status** | Integer | Version status ID
+**version** | Integer | Version number
+**subversion** | Integer | Subversion number
+
+
+### Response
+
+#### Content
+I dont know what comes back yet.
 
 #### Code
 
