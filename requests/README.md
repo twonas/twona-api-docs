@@ -5,7 +5,8 @@
 - [Get files from a Request (GET)](#get-files-attachments)
 - [Get all requests (GET)](#get-all-requests)
 - [Get all Status (GET)](#get-all-status)
-- [Upload new version (PUT)](#upload-new-version)
+- [Upload new version (POST)](#upload-new-version)
+- [Create project (POST)](#create-project)
 
 ## Terminology
 
@@ -425,6 +426,71 @@ Field name |     Type    | Description
 **status** | Integer | Version status ID
 **version** | Integer | Version number
 **subversion** | Integer | Subversion number
+
+
+### Response
+
+#### Content
+I dont know what comes back yet.
+
+#### Code
+
+Http Status | Details
+----------- | ----------
+200 | OK
+
+### Examples
+
+#### Request
+```sh
+curl -X GET \
+  https://{BASE_URL}/api/v2/requests/status \
+  -H 'access-token: {ACCESS_TOKEN}'
+```
+
+#### Response
+```json
+[
+    {
+        "color": "#97CBC0",
+        "id": 371,
+        "name": "Received"
+    },
+    {
+       "color":"#E1AB32",
+       "id":542,
+       "name":"Checking"
+    },
+    {
+       "color":"#63B7AD",
+       "id":571,
+       "name":"Finished"
+    }
+]
+```
+
+## Create Project
+
+Create a project.
+
+### Request
+
+#### Resource
+
+Method | Url | Description
+------- | -------- | -------
+POST | https://{BASE_URL}/api/v2/requests | Create Project
+
+#### Inputs
+
+Field name |     Type    | Description
+--------- | ----------- | -----------
+**files** | Array | Array of files of the version
+**labels** | Array | Array of labels to use
+**workflow** | Integer | Workflow ID
+**info** | String | Free text
+**version** | Integer | Original version ID
+**due_date** | String | String with the duedate
 
 
 ### Response
