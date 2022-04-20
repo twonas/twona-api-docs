@@ -501,7 +501,7 @@ curl -X POST \
 
 ## Create Project
 
-Create a project.
+Create a project in the system.
 
 ### Request
 
