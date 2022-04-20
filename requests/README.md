@@ -431,7 +431,7 @@ Field name |     Type    | Description
 ### Response
 
 #### Content
-I dont know what comes back yet.
+It returns a _version object_.
 
 #### Code
 
@@ -496,7 +496,7 @@ Field name |     Type    | Description
 ### Response
 
 #### Content
-I dont know what comes back yet.
+It returns a _request object_.
 
 #### Code
 
