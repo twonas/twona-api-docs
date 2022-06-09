@@ -5,6 +5,8 @@
 - [Get files from a Request (GET)](#get-files-attachments)
 - [Get all requests (GET)](#get-all-requests)
 - [Get all Status (GET)](#get-all-status)
+- [Upload new version (POST)](#upload-new-version)
+- [Create project (POST)](#create-project)
 
 ## Terminology
 
@@ -400,5 +402,195 @@ curl -X GET \
        "id":571,
        "name":"Finished"
     }
+]
+```
+
+## Upload New Version
+
+Upload a new version from a given project.
+
+### Request
+
+#### Resource
+
+Method | Url | Description
+------- | -------- | -------
+POST | https://{BASE_URL}/api/v2/requests/{id}/version | Upload New Version
+
+#### Inputs
+
+Field name |     Type    | Description
+--------- | ----------- | -----------
+**files** | Array | Array of files of the version
+**labels** | Array | Array of labels to use
+**status** | Integer | Version status ID
+**version** | Integer | Version number
+**subversion** | Integer | Subversion number
+
+
+### Response
+
+#### Content
+It returns a _version object_.
+
+#### Code
+
+Http Status | Details
+----------- | ----------
+200 | OK
+
+### Examples
+
+#### Request
+```sh
+curl -X POST \
+  https://{BASE_URL}/api/v2/requests/233/version \
+  -H 'access-token: {ACCESS_TOKEN}'
+  -d '{ "files": ["xsd332se34", "32dr33$dsde"],
+        "labels": [23, 44, 456],
+        "satus": 2334,
+        "version": 1,
+        "subversion": 1}'
+```
+
+#### Response
+```json
+[
+    {
+    "id": 956783,
+    "labels": [
+        {
+            "id": 928,
+            "group": {
+                "color": "#E85637",
+                "id": 49,
+                "name": "Manufacturer"
+            },
+            "name": "Label 928"
+        },
+        {
+            "id": 78,
+            "group": {
+                "color": "#EAC739",
+                "id": 89,
+                "name": "Presentation"
+            },
+            "name": "Label 78"
+        }
+    ],
+    "labels_text": "Label 928, Label 78",
+    "version": "4.2",
+    "version_number": 4,
+    "subversion_number": 2,
+    "time_created": "2021-02-10T11:32:07+00:00",
+    "user_owner": {
+        "date_created": "2019-02-19T09:09:23+00:00",
+        "email": "user@mail.com",
+        "id": "iDCHaRs",
+        "name": "User example name",
+        "position": "User position"
+    },
+    "status": {
+        "color": "#E1AB32",
+        "id": 12,
+        "name": "In process"
+    }
+    }
+]
+```
+
+## Create Project
+
+Create a project in the system.
+
+### Request
+
+#### Resource
+
+Method | Url | Description
+------- | -------- | -------
+POST | https://{BASE_URL}/api/v2/requests | Create Project
+
+#### Inputs
+
+Field name |     Type    | Description
+--------- | ----------- | -----------
+**files** | Array | Array of files of the version
+**labels** | Array | Array of labels to use
+**workflow** | Integer | Workflow ID
+**info** | String | Free text
+**version** | Integer | Original version ID
+**due_date** | String | String with the duedate
+
+
+### Response
+
+#### Content
+It returns a _request object_.
+
+#### Code
+
+Http Status | Details
+----------- | ----------
+200 | OK
+
+### Examples
+
+#### Request
+```sh
+curl -X POST \
+  https://{BASE_URL}/api/v2/requests \
+  -H 'access-token: {ACCESS_TOKEN}'
+  -d '{ "files": ["xsd332se34", "32dr33$dsde"],
+        "labels": [23, 44, 456],
+        "workflow": 234,
+        "info": "This is a new project",
+        "version": 23345,
+        "due_date": "2022/10/01"}'
+```
+
+#### Response
+```json
+[
+    {
+    "id": 80001,
+    "labels": [
+        {
+            "id": 33001,
+            "group": {
+                "color": "#E85637",
+                "id": 49,
+                "name": "Group 1"
+            },
+            "name": "Label 1"
+        },
+        {
+            "id": 33022,
+            "group": {
+                "color": "#63B7AD",
+                "id": 59,
+                "name": "Group 2"
+            },
+            "name": "Label 2"
+        }
+    ],
+    "labels_text": "Label 1, Label 2",
+    "info": "Hi,<br><p>Please find attached pdf file annotated.</p><br><p>Thank you</p><p>Best regards</p><p>Charles</p>",
+    "date_created": "2021-02-09T17:27:36+00:00",
+    "date_updated": "2021-02-10T09:09:23+00:00",
+    "priority": 80746.00001,
+    "status": {
+        "color": "#63B7AD",
+        "id": 798,
+        "name": "Finished"
+    },
+    "user_owner": {
+        "date_created": "2019-02-19T09:09:23+00:00",
+        "email": "user@mail.com",
+        "id": "iDCHaRs",
+        "name": "User example name",
+        "position": "User position"
+    },
+  }
 ]
 ```
