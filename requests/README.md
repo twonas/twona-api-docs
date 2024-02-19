@@ -40,6 +40,15 @@ Field name |     Type    | Description
 **name** | string | Status name (the step in the workflow)
 **color** | string | HEX Color
 
+**Extended** **_status object_**
+
+Field name |     Type    | Description
+--------- | ----------- | -----------
+**id** | string | Id (unique) of the Status
+**name** | string | Status name (the step in the workflow)
+**color** | string | HEX Color
+**workflow** | Object | Short _workflow object_
+
 ## Get a Request
 
 Get the information of a specific request.
