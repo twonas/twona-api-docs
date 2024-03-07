@@ -4,6 +4,7 @@
 - [Get all Tags (GET)](#get-all-tags)
 - [Get a Tag (GET)](#get-a-tag)
 - [Get all Categories (GET)](#get-all-categories)
+- [Create a Category (POST)](#create-a-category)
 
 ## Terminology
 
@@ -18,7 +19,7 @@ Field name |     Type    | Description
 **id** | integer | Id (unique) of the Request
 **name** | string | Tag name
 
-**Extended* **_tag object_**
+**Extended* **_tag extended object_**
 
 Field name |     Type    | Description
 --------- | ----------- | -----------
@@ -203,4 +204,112 @@ curl -X GET \
         "color": "#E8A97D"
     }
 ]
+```
+
+## Create a Category
+
+Create a tag category in the system.
+
+### Request
+
+#### Resource
+
+Method | Url | Description
+------- | -------- | -------
+POST | https://{BASE_URL}/api/v2/labels/categories | Create Category
+
+#### Inputs
+
+Field name |     Type    | Description
+--------- | ----------- | -----------
+**name** | String | Name of category
+**color** | String (optional) | Color of category in hexadecimal ("#ab1cd2")
+
+
+### Response
+
+#### Content
+It returns a _category object_.
+
+#### Code
+
+Http Status | Details
+----------- | ----------
+201 | Created
+403 | Forbidden (The user hasn't permissio for add tags)
+406 | Not acceptable (Name or color is not valid)
+
+### Examples
+
+#### Request
+```sh
+curl -X POST \
+  https://{BASE_URL}/api/v2/labels/categories \
+  -H 'access-token: {ACCESS_TOKEN}'
+  -d '{ "name": "New category",
+        "color": "#ab1cd2" }'
+```
+
+#### Response
+```json
+{
+    "id": 801,
+    "name": "New category",
+    "color": "#ab1cd2"
+}
+```
+
+## Create a Tag
+
+Create a tag into a category in the system.
+
+### Request
+
+#### Resource
+
+Method | Url | Description
+------- | -------- | -------
+POST | https://{BASE_URL}/api/v2/labels/categories/{CATEGORY_ID} | Create Tag
+
+#### Inputs
+
+Field name |     Type    | Description
+--------- | ----------- | -----------
+**name** | String | Name of tag
+
+
+### Response
+
+#### Content
+It returns a _tag extended object_.
+
+#### Code
+
+Http Status | Details
+----------- | ----------
+201 | Created
+403 | Forbidden (The user hasn't permission for add tags)
+406 | Not acceptable (Name is not valid or category is not valid)
+
+### Examples
+
+#### Request
+```sh
+curl -X POST \
+  https://{BASE_URL}/api/v2/labels/categories/{CATEGORY_ID} \
+  -H 'access-token: {ACCESS_TOKEN}'
+  -d '{ "name": "New tag"}'
+```
+
+#### Response
+```json
+{
+    "id": 8001,
+    "name": "New tag",
+    "category": {
+        "id": 801,
+        "name": "New category",
+        "color": "#ab1cd2"
+    }
+}
 ```
