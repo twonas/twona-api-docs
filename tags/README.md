@@ -5,6 +5,7 @@
 - [Get a Tag (GET)](#get-a-tag)
 - [Get all Categories (GET)](#get-all-categories)
 - [Create a Category (POST)](#create-a-category)
+- [Create a Tag (POST)](#create-a-tag)
 
 ## Terminology
 
