@@ -217,7 +217,7 @@ Create a tag category in the system.
 
 Method | Url | Description
 ------- | -------- | -------
-POST | https://{BASE_URL}/api/v2/labels/categories | Create Category
+POST | https://{BASE_URL}/api/v2/tags/categories | Create Category
 
 #### Inputs
 
@@ -270,7 +270,7 @@ Create a tag into a category in the system.
 
 Method | Url | Description
 ------- | -------- | -------
-POST | https://{BASE_URL}/api/v2/labels/categories/{CATEGORY_ID} | Create Tag
+POST | https://{BASE_URL}/api/v2/tags/categories/{CATEGORY_ID} | Create Tag
 
 #### Inputs
 
