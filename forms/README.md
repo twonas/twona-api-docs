@@ -1,13 +1,8 @@
 # Working with Project forms
 
 - [Terminology](#terminology)
-- [Get one Request (GET))](#get-a-request)
-- [Get files from a Request (GET)](#get-files-attachments)
-- [Get all requests (GET)](#get-all-requests)
-- [Get all Status (GET)](#get-all-status)
-- [Get Status (GET)](#get-status)
-- [Upload new version (POST)](#upload-new-version)
-- [Create project (POST)](#create-project)
+- [Get form data (GET))](#get-form-data)
+- [Submit data (POST)](#submit-data)
 
 ## Terminology
 
@@ -295,7 +290,7 @@ curl -X GET \
 ]
 ```
 
-## Submission data
+## Submit data
 
 Submit data in a form into a project.
 
