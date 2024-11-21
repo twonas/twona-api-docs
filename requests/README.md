@@ -474,7 +474,7 @@ Upload a new version from a given project.
 
 Method | Url | Description
 ------- | -------- | -------
-POST | https://{BASE_URL}/api/v2/requests/{id}/version | Upload New Version
+POST | https://{BASE_URL}/api/v2/requests/{id}/versions | Upload New Version
 
 #### Inputs
 
@@ -503,7 +503,7 @@ Http Status | Details
 #### Request
 ```sh
 curl -X POST \
-  https://{BASE_URL}/api/v2/requests/233/version \
+  https://{BASE_URL}/api/v2/requests/233/versions \
   -H 'access-token: {ACCESS_TOKEN}'
   -d '{ "files": ["xsd332se34", "32dr33$dsde"],
         "labels": [23, 44, 456],
