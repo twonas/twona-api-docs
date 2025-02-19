@@ -13,7 +13,8 @@
     - [Group management](groups/README.md#working-with-groups)
 - **Requests and Versions**
     - [Requests Data](requests/README.md#working-with-requests)
-    - [Versions Data](versions/README.mdworking-with-versions)
+    - [Versions Data](versions/README.md#working-with-versions)
+    - [Tags](tags/README.md#working-with-tags)
 - **File Management**
     - [Files](files/README.md#working-with-files)
 - **Filtering and Ordering**

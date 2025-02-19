@@ -5,6 +5,7 @@
 - [Get files from a Request (GET)](#get-files-attachments)
 - [Get all requests (GET)](#get-all-requests)
 - [Get all Status (GET)](#get-all-status)
+- [Get Status (GET)](#get-status)
 - [Upload new version (POST)](#upload-new-version)
 - [Create project (POST)](#create-project)
 
@@ -38,6 +39,15 @@ Field name |     Type    | Description
 **id** | string | Id (unique) of the Status
 **name** | string | Status name (the step in the workflow)
 **color** | string | HEX Color
+
+**Extended** **_status object_**
+
+Field name |     Type    | Description
+--------- | ----------- | -----------
+**id** | string | Id (unique) of the Status
+**name** | string | Status name (the step in the workflow)
+**color** | string | HEX Color
+**workflow** | Object | Short _workflow object_
 
 ## Get a Request
 
@@ -405,6 +415,55 @@ curl -X GET \
 ]
 ```
 
+## Get status
+
+Return the details of a request status.
+
+### Request
+
+#### Resource
+
+Method | Url | Description
+------- | -------- | -------
+GET | https://{BASE_URL}/api/v2/requests/status/{STATUS_ID} | Get request status
+
+#### Inputs
+
+Empty.
+
+### Response
+
+#### Content
+An extended _status object_.
+
+#### Code
+
+Http Status | Details
+----------- | ----------
+200 | OK
+
+### Examples
+
+#### Request
+```sh
+curl -X GET \
+  https://{BASE_URL}/api/v2/requests/status/371 \
+  -H 'access-token: {ACCESS_TOKEN}'
+```
+
+#### Response
+```json
+{
+    "color": "#97CBC0",
+    "id": 371,
+    "name": "Received",
+    "workflow": {
+        "id": 1,
+        "name": "Default"
+    }
+}
+```
+
 ## Upload New Version
 
 Upload a new version from a given project.
@@ -415,7 +474,7 @@ Upload a new version from a given project.
 
 Method | Url | Description
 ------- | -------- | -------
-POST | https://{BASE_URL}/api/v2/requests/{id}/version | Upload New Version
+POST | https://{BASE_URL}/api/v2/requests/{id}/versions | Upload New Version
 
 #### Inputs
 
@@ -444,7 +503,7 @@ Http Status | Details
 #### Request
 ```sh
 curl -X POST \
-  https://{BASE_URL}/api/v2/requests/233/version \
+  https://{BASE_URL}/api/v2/requests/233/versions \
   -H 'access-token: {ACCESS_TOKEN}'
   -d '{ "files": ["xsd332se34", "32dr33$dsde"],
         "labels": [23, 44, 456],

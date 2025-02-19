@@ -30,6 +30,11 @@ Field name |     Type    | Description
 **status** | Status Object | Current status of the Version
 **user_owner** | User Object | User who uploaded the version
 
+**approval_requestor** | User Object | User who request and approval
+**approval_user** | User Object | User who received an approval
+**approval_text** | string | Message writed by the user who received an approval
+**approvals_status** | string | Allowed values: completed/uncompleted
+
 ### Status
 
 **Status**: A version can be set to a specific Status (ex. Approved). This determines the purpose of the Version and can be used to filter, limit access, etc.
