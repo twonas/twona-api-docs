@@ -6,6 +6,7 @@
 - [Get all requests (GET)](#get-all-requests)
 - [Get all Status (GET)](#get-all-status)
 - [Get Status (GET)](#get-status)
+- [Get Versions from Request (GET)](#get-versions) #TODO: complete the access point
 - [Upload new version (POST)](#upload-new-version)
 - [Create project (POST)](#create-project)
 
