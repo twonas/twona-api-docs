@@ -1,37 +1,38 @@
-# Working with Requests
+# Working with Projects (old: Requests)
 
 - [Terminology](#terminology)
-- [Get one Request (GET))](#get-a-request)
+- [Get one Project (GET))](#get-a-request)
 - [Get files from a Request (GET)](#get-files-attachments)
-- [Get all requests (GET)](#get-all-requests)
+- [Get all Projects (GET)](#get-all-requests)
 - [Get all Status (GET)](#get-all-status)
 - [Get Status (GET)](#get-status)
-- [Get Versions from Request (GET)](#get-versions) #TODO: complete the access point
+- [Get Versions from Project (GET)](#get-versions) #TODO: complete the access point
 - [Upload new version (POST)](#upload-new-version)
-- [Create project (POST)](#create-project)
+- [Create Project (POST)](#create-project)
+- [Set Project (PUT)](#set-project)
 
 ## Terminology
 
-### Request
+### Project
 
-**Request**: A Request is used to group, track and aggregate the process of creating assets (or artworks). A request will follow the steps defined in a workflow and will link together Versions, Attachments, Messages, Approvals and anything else related to a specific project.
+**Project**: A Project is used to group, track and aggregate the process of creating assets (or artworks). A Project will follow the steps defined in a workflow and will link together Versions, Attachments, Messages, Approvals and anything else related to a specific project.
 
 **_request object_**
 
 Field name |     Type    | Description
 --------- | ----------- | -----------
-**id** | integer | Id (unique) of the Request
+**id** | integer | Id (unique) of the Project
 **labels** | array | Collection of assigned labels
 **labels_text** | string | Coma separated labels as text
 **info** | string | Info field (HTML text)
 **date_created** | ISO 8601 date | Timestamp of creation
-**priority** | float | Priority (relative to other requests)
-**status** | Status Object | Current status (step in the workflow) of the Request
-**user_owner** | User Object | Creator of the request
+**priority** | float | Priority (relative to other Projects)
+**status** | Status Object | Current status (step in the workflow) of the Project
+**user_owner** | User Object | Creator of the Project
 
 ### Status
 
-**Status**: The Status represents the current state of the request within the assigned workflow.
+**Status**: The Status represents the current state of the Project within the assigned workflow.
 
 **_status object_**
 
@@ -50,11 +51,11 @@ Field name |     Type    | Description
 **color** | string | HEX Color
 **workflow** | Object | Short _workflow object_
 
-## Get a Request
+## Get a Project
 
-Get the information of a specific request.
+Get the information of a specific Project.
 
-### Request
+### Project
 
 #### Resource
 
@@ -138,9 +139,9 @@ curl -X GET \
 
 ## Get files (attachments)
 
-Return a list of all active files (attachments) in a request.
+Return a list of all active files (attachments) in a Project.
 
-### Request
+### Project
 
 #### Resource
 
@@ -204,11 +205,11 @@ curl -X GET \
 ]
 ```
 
-## Get all Requests
+## Get all Projects
 
-Return the list of all requests in the organization.
+Return the list of all Projects in the organization.
 
-### Request
+### Project
 
 #### Resource
 
@@ -226,7 +227,7 @@ Field name |     Type    | Description
 
 #### Filtering list
 
-To filter the list of requests, you can add a conditional query `q` as field:query (#search-queries).
+To filter the list of Projects, you can add a conditional query `q` as field:query (#search-queries).
 
 Allowed filters:
 
@@ -237,7 +238,7 @@ Field | Type | Description
 **user_owner**   | integer | Id of the owner
 **label**   | integer | Id of the label
 
-To order the list of requests, you can add a sort query `sort_by` as field1,field2 (#search-queries).
+To order the list of Projects, you can add a sort query `sort_by` as field1,field2 (#search-queries).
 
 Order fields:
 
@@ -262,7 +263,7 @@ Http Status | Details
 
 #### Request
 ```sh
-# Get requests from the workflow 31 order by id desc
+# Get Projects from the workflow 31 order by id desc
 curl -X GET \
   https://{BASE_URL}/api/v2/requests \
   -H 'access-token: {ACCESS_TOKEN}' \
@@ -358,15 +359,15 @@ curl -X GET \
 
 ## Get all status
 
-Return the list of all request status in the organization.
+Return the list of all Project status in the organization.
 
-### Request
+### Project
 
 #### Resource
 
 Method | Url | Description
 ------- | -------- | -------
-GET | https://{BASE_URL}/api/v2/requests/status | Get all request status
+GET | https://{BASE_URL}/api/v2/requests/status | Get all Project status
 
 #### Inputs
 
@@ -418,9 +419,9 @@ curl -X GET \
 
 ## Get status
 
-Return the details of a request status.
+Return the details of a Project status.
 
-### Request
+### Project
 
 #### Resource
 
@@ -654,3 +655,95 @@ curl -X POST \
   }
 ]
 ```
+
+## Set Project
+
+Set details of a project.
+
+### Request
+
+#### Resource
+
+Method | Url | Description
+------- | -------- | -------
+POST | https://{BASE_URL}/api/v2/requests | Set Project
+
+#### Inputs
+
+Field name |     Type    | Description
+--------- | ----------- | -----------
+**labels** (optional) | Array | Array of label IDs to use
+**assigned** (optional) | String | Hash of the user to be assigned to the Project
+**status** (optional) | Integer | ID of the status (the transition needs to be permitted)
+**due_date** (optional) | String | String with the duedate (YYYY-MM-DD)
+
+
+### Response
+
+#### Content
+It returns a _project object_.
+
+#### Code
+
+Http Status | Details
+----------- | ----------
+200 | OK
+
+### Examples
+
+#### Request
+```sh
+curl -X POST \
+  https://{BASE_URL}/api/v2/requests \
+  -H 'access-token: {ACCESS_TOKEN}'
+  -d '{ "files": ["xsd332se34", "32dr33$dsde"],
+        "labels": [23, 44, 456],
+        "due_date": "2022/10/01"}'
+```
+
+#### Response
+```json
+[
+    {
+    "id": 80001,
+    "labels": [
+        {
+            "id": 33001,
+            "group": {
+                "color": "#E85637",
+                "id": 49,
+                "name": "Group 1"
+            },
+            "name": "Label 1"
+        },
+        {
+            "id": 33022,
+            "group": {
+                "color": "#63B7AD",
+                "id": 59,
+                "name": "Group 2"
+            },
+            "name": "Label 2"
+        }
+    ],
+    "labels_text": "Label 1, Label 2",
+    "info": "Hi,<br><p>Please find attached pdf file annotated.</p><br><p>Thank you</p><p>Best regards</p><p>Charles</p>",
+    "date_created": "2021-02-09T17:27:36+00:00",
+    "date_updated": "2021-02-10T09:09:23+00:00",
+    "priority": 80746.00001,
+    "status": {
+        "color": "#63B7AD",
+        "id": 798,
+        "name": "Finished"
+    },
+    "user_owner": {
+        "date_created": "2019-02-19T09:09:23+00:00",
+        "email": "user@mail.com",
+        "id": "iDCHaRs",
+        "name": "User example name",
+        "position": "User position"
+    },
+  }
+]
+```
+
