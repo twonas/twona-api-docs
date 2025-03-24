@@ -672,6 +672,7 @@ POST | https://{BASE_URL}/api/v2/requests | Set Project
 
 Field name |     Type    | Description
 --------- | ----------- | -----------
+**request_id** | Array | ID of the project to update
 **labels** (optional) | Array | Array of label IDs to use
 **assigned** (optional) | String | Hash of the user to be assigned to the Project
 **status** (optional) | Integer | ID of the status (the transition needs to be permitted)
