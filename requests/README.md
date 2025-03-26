@@ -3,7 +3,7 @@
 - [Terminology](#terminology)
 - [Get one Project (GET))](#get-a-request)
 - [Get files from a Request (GET)](#get-files-attachments)
-- [Get all Projects (GET)](#get-all-requests)
+- [Get all Projects (GET)](#get-all-projects)
 - [Get all Status (GET)](#get-all-status)
 - [Get Status (GET)](#get-status)
 - [Get Versions from Project (GET)](#get-versions) #TODO: complete the access point
