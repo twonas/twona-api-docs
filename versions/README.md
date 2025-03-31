@@ -57,7 +57,7 @@ Return the details of a specific version.
 
 Method | Url
 ------- | --------
-GET | https://{BASE_URL}/api/v2/versions/{VERSION_ID}
+GET | https://{BASE_URL}/v2/versions/{VERSION_ID}
 
 #### Inputs
 
@@ -83,7 +83,7 @@ Http Status | Details
 
 ```sh
 curl -X GET \
-  https://{BASE_URL}/api/v2/versions/{VERSION_ID} \
+  https://{BASE_URL}/v2/versions/{VERSION_ID} \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
@@ -142,7 +142,7 @@ Return the list of all files in a version.
 
 Method | Url
 ------- | --------
-GET | https://{BASE_URL}/api/v2/versions/{VERSION_ID}/files
+GET | https://{BASE_URL}/v2/versions/{VERSION_ID}/files
 
 #### Inputs
 
@@ -167,7 +167,7 @@ Http Status | Details
 #### Request
 ```sh
 curl -X GET \
-  https://{BASE_URL}/api/v2/versions/{VERSION_ID}/files \
+  https://{BASE_URL}/v2/versions/{VERSION_ID}/files \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
@@ -210,7 +210,7 @@ Return the list of all versions in the organization.
 
 Method | Url
 ------- | --------
-GET | https://{BASE_URL}/api/v2/versions
+GET | https://{BASE_URL}/v2/versions
 
 #### Inputs
 
@@ -257,7 +257,7 @@ Http Status | Details
 ```sh
 # Get requests from the workflow 31 order by id desc
 curl -X GET \
-  https://{BASE_URL}/api/v2/versions \
+  https://{BASE_URL}/v2/versions \
   -H 'access-token: {ACCESS_TOKEN}' \
   --data-urlencode 'q=status:12' \
   --data-urlencode 'sort_by=-id'
@@ -359,7 +359,7 @@ Return the list of all version status in the organization.
 
 Method | Url | Description
 ------- | -------- | -------
-GET | https://{BASE_URL}/api/v2/versions/status | Get all versions status
+GET | https://{BASE_URL}/v2/versions/status | Get all versions status
 
 #### Inputs
 
@@ -381,7 +381,7 @@ Http Status | Details
 #### Request
 ```sh
 curl -X GET \
-  https://{BASE_URL}/api/v2/versions/status \
+  https://{BASE_URL}/v2/versions/status \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
