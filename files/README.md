@@ -38,7 +38,7 @@ Obtain details of a specific file.
 
 Method | Url
 ------- | --------
-GET | https://{BASE_URL}/api/v2/files/{FILE_ID}
+GET | https://{BASE_URL}/v2/files/{FILE_ID}
 
 ### Response
 
@@ -56,7 +56,7 @@ Http Status | Details
 #### Request
 ```
 curl -X GET \
-  https://{BASE_URL}/api/v2/files/{FILE_ID} \
+  https://{BASE_URL}/v2/files/{FILE_ID} \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
@@ -81,13 +81,13 @@ Download a specific file.
 
 Method | Url
 ------- | --------
-GET | https://{BASE_URL}/api/v2/files/{FILE_ID}
+GET | https://{BASE_URL}/v2/files/{FILE_ID}
 
 **Headers**
 
 Header key |     Type    | Description
 --------- | ----------- | -----------
-**Content-Type**  | string | Content type of the body
+**Content-Type**  | string | Content type of the body (application/octet-stream to download and application/json for metadata)
 
 
 ### Response
@@ -103,9 +103,9 @@ Http Status | Details
 #### Request
 ```
 curl -X GET \
-  https://{BASE_URL}/api/v2/files/{FILE_ID} \
+  https://{BASE_URL}/v2/files/{FILE_ID} \
   -H 'access-token: {ACCESS_TOKEN}'
-  -H 'Content-Type: application/offset+octet-stream' \
+  -H 'Content-Type: application/octet-stream' \
 ```
 
 ## Add metadata to File
@@ -117,7 +117,7 @@ Add custom metadata to a specific file. When metadata is added to a file, the fi
 
 Method | Url
 ------- | --------
-PUT | https://{BASE_URL}/api/v2/files/{FILE_ID}
+PUT | https://{BASE_URL}/v2/files/{FILE_ID}
 
 #### Inputs
 
@@ -142,7 +142,7 @@ Http Status | Details
 #### Request
 ```
 curl \
-  https://{BASE_URL}/api/v2/files \
+  https://{BASE_URL}/v2/files \
   -H 'access-token: {ACCESS_TOKEN}' \
   -d '{"metadata":{"key":"value","key2":"value2"}}'
 ```
@@ -162,7 +162,7 @@ Return all the files from the organization.
 
 Method | Url
 ------- | --------
-GET | https://{BASE_URL}/api/v2/files
+GET | https://{BASE_URL}/v2/files
 
 #### Inputs
 
@@ -190,7 +190,7 @@ Http Status | Details
 #### Request
 ```
 curl -X GET \
-  https://{BASE_URL}/api/v2/files \
+  https://{BASE_URL}/v2/files \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
@@ -198,7 +198,7 @@ curl -X GET \
 # Filtering: All files with a field called owner start with "diego"
 
 curl -G \
-  https://{BASE_URL}/api/v2/files \
+  https://{BASE_URL}/v2/files \
   -H 'access-token: {ACCESS_TOKEN}'
   --data-urlencode 'q=owner:diego*'
 ```
