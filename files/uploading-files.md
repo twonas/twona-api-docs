@@ -14,7 +14,7 @@ Files can be uploaded via an upload resource. The first step is to request one.
 
 Method | Url
 ------- | --------
-POST | https://{BASE_URL}/api/v2/files
+POST | https://{BASE_URL}/v2/files
 
 #### Inputs
 
@@ -58,7 +58,7 @@ Http Status | Details
 ```
 curl -v \
   -X POST \
-  https://{BASE_URL}/api/v2/files \
+  https://{BASE_URL}/v2/files \
   -H 'access-token: {ACCESS_TOKEN}' \
   -H 'Upload-Length: 100'
   -H 'Upload-Metadata: filename ZmlsZS5kb2M=,filetype YXBwbGljYXRpb24vbXN3b3Jk'
@@ -69,7 +69,7 @@ curl -v \
 ```
 < HTTP/1.1 201 Created
 < Tus-Resumable: 1.0.0
-< location: https://{BASE_URL}/api/v2/files/i6l028r76jsj
+< location: https://{BASE_URL}/v2/files/i6l028r76jsj
 < Upload-Expires: Wed, 06 Nov 2019 14:24:45 GMT
 ...
 ```
@@ -83,7 +83,7 @@ Once an upload URL resource is obtained, files can be uploaded. Files are upload
 
 Method | Url
 ------- | --------
-PATCH | https://{BASE_URL}/api/v2/files/{FILE_ID}
+PATCH | https://{BASE_URL}/v2/files/{FILE_ID}
 
 #### Inputs
 
@@ -128,7 +128,7 @@ Http Status | Details
 ```
 curl -v \
   -X PATCH \
-  https://{BASE_URL}/api/v2/files/i6l028r76jsj \
+  https://{BASE_URL}/v2/files/i6l028r76jsj \
   -H 'access-token: {ACCESS_TOKEN}' \
   -H 'Upload-Offset: 0' \
   -H 'Content-Length: 30' \
@@ -155,7 +155,7 @@ Check the state of an upload.
 
 Method | Url
 ------- | --------
-HEAD | https://{BASE_URL}/api/v2/files/{FILE_ID}
+HEAD | https://{BASE_URL}/v2/files/{FILE_ID}
 
 #### Inputs
 
@@ -197,7 +197,7 @@ Http Status | Details
 ```
 curl -v \
   -X HEAD \
-  https://{BASE_URL}/api/v2/files/i6l028r76jsj \
+  https://{BASE_URL}/v2/files/i6l028r76jsj \
   -H 'access-token: {ACCESS_TOKEN}' \
 ```
 
