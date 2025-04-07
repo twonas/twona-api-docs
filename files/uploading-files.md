@@ -76,7 +76,7 @@ curl -v \
 
 ## Uploading content
 
-Once an upload URL resource is obtained, files can be uploaded. Files are uploaded using a `PATCH` request and they MUST use `Content-Type: application/offset+octet-stream`. If the file is larger than the maximum part size, you need to chunk the file in parts. The minimum part size is 5MB (except the last part). The maximum upload part size is 10MB.
+Once an upload URL resource is obtained, files can be uploaded. Files are uploaded using a `PATCH` request and they MUST use `Content-Type: application/offset+octet-stream`. If the file is larger than the maximum part size, you need to chunk the file in parts. The minimum part size is 5MB (except the last part). The maximum upload part size is 10MB. Once the 204 code is returned, the ID of the URL is the file ID.
 
 ### Request
 #### Resource
@@ -108,7 +108,6 @@ File content.
 Header key |     Type    | Description
 --------- | ----------- | -----------
 **Upload-Offset** | integer | Offset of the resource (in bytes). If equal to file size, the upload process is over successfully.
-**Twona-File-Id** | string | Unique id assigned to the file.
 
 **Body**
 
