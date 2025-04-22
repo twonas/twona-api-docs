@@ -60,7 +60,7 @@ Get the information of forms in a project.
 
 Method | Url
 ------- | --------
-GET | https://{BASE_URL}/api/v2/projects/{PROJECT_ID}/data
+GET | https://{BASE_URL}/v2/projects/{PROJECT_ID}/data
 
 #### Inputs
 
@@ -85,7 +85,7 @@ Http Status | Details
 
 ```sh
 curl -X GET \
-  https://{BASE_URL}/api/v2/projects/1080/data \
+  https://{BASE_URL}/v2/projects/1080/data \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
@@ -300,7 +300,7 @@ Submit data in a form into a project.
 
 Method | Url | Description
 ------- | -------- | -------
-POST | https://{BASE_URL}/api/v2/projects/{PROJECT_ID}/data/{FORM_UUID} | Submit a form
+POST | https://{BASE_URL}/v2/projects/{PROJECT_ID}/data/{FORM_UUID} | Submit a form
 
 #### Inputs
 
@@ -333,7 +333,7 @@ Http Status | Details
 #### Request
 ```sh
 curl -X POST \
-  https://{BASE_URL}/api/v2/projects/1080/data/d28aedaf-bc45-4e25-8221-3dd8eefb135c \
+  https://{BASE_URL}/v2/projects/1080/data/d28aedaf-bc45-4e25-8221-3dd8eefb135c \
   -H 'access-token: {ACCESS_TOKEN}'
   -d '{"values": [{
       "alias": "some_simple_text_field",
@@ -360,7 +360,7 @@ curl -X POST \
 
 ```sh
 curl -X POST \
-  https://{BASE_URL}/api/v2/projects/1080/data/d28aedaf-bc45-4e25-8221-3dd8eefb135c \
+  https://{BASE_URL}/v2/projects/1080/data/d28aedaf-bc45-4e25-8221-3dd8eefb135c \
   -H 'access-token: {ACCESS_TOKEN}'
   -d '{"values": [{
       "alias": "some_simple_text_field",
