@@ -18,7 +18,7 @@ Send a request for feedback/approval to a collection of email addresses (can be 
 
 Method | Url
 ------- | --------
-POST | https://{BASE_URL}/api/v2/p/feedback
+POST | https://{BASE_URL}/v2/p/feedback
 
 #### Inputs
 
@@ -47,7 +47,7 @@ Http Status | Details
 #### Request
 ```
 curl -X POST \
-  https://{BASE_URL}/api/v2/p/feedback \
+  https://{BASE_URL}/v2/p/feedback \
   -H 'access-token: {ACCESS_TOKEN}' \
   -d '{
         "emails": ["diego@twonas.com", "miguel@twonas.com"],
