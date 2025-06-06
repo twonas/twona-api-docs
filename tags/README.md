@@ -50,7 +50,7 @@ Get the information of a specific tag.
 
 Method | Url
 ------- | --------
-GET | https://{BASE_URL}/api/v2/tags/{TAG_ID}
+GET | https://{BASE_URL}/v2/tags/{TAG_ID}
 
 #### Inputs
 
@@ -75,7 +75,7 @@ Http Status | Details
 
 ```sh
 curl -X GET \
-  https://{BASE_URL}/api/v2/tags/{TAG_ID} \
+  https://{BASE_URL}/v2/tags/{TAG_ID} \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
@@ -103,7 +103,7 @@ Return the list of all tags in the organization.
 
 Method | Url | Description
 ------- | -------- | -------
-GET | https://{BASE_URL}/api/v2/tags | Get all tags
+GET | https://{BASE_URL}/v2/tags | Get all tags
 
 #### Inputs
 
@@ -128,7 +128,7 @@ Http Status | Details
 #### Request
 ```sh
 curl -X GET \
-  https://{BASE_URL}/api/v2/tags \
+  https://{BASE_URL}/v2/tags \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
@@ -164,7 +164,7 @@ Return the list of all tags categorie in organization.
 
 Method | Url | Description
 ------- | -------- | -------
-GET | https://{BASE_URL}/api/v2/tags/categories | Get all tags categories
+GET | https://{BASE_URL}/v2/tags/categories | Get all tags categories
 
 #### Inputs
 
@@ -187,7 +187,7 @@ Http Status | Details
 #### Request
 ```sh
 curl -X GET \
-  https://{BASE_URL}/api/v2/tags/categories \
+  https://{BASE_URL}/v2/tags/categories \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
@@ -217,7 +217,7 @@ Create a tag category in the system.
 
 Method | Url | Description
 ------- | -------- | -------
-POST | https://{BASE_URL}/api/v2/tags/categories | Create Category
+POST | https://{BASE_URL}/v2/tags/categories | Create Category
 
 #### Inputs
 
@@ -245,7 +245,7 @@ Http Status | Details
 #### Request
 ```sh
 curl -X POST \
-  https://{BASE_URL}/api/v2/labels/categories \
+  https://{BASE_URL}/v2/labels/categories \
   -H 'access-token: {ACCESS_TOKEN}'
   -d '{ "name": "New category",
         "color": "#ab1cd2" }'
@@ -270,7 +270,7 @@ Create a tag into a category in the system.
 
 Method | Url | Description
 ------- | -------- | -------
-POST | https://{BASE_URL}/api/v2/tags/categories/{CATEGORY_ID} | Create Tag
+POST | https://{BASE_URL}/v2/tags/categories/{CATEGORY_ID} | Create Tag
 
 #### Inputs
 
@@ -297,7 +297,7 @@ Http Status | Details
 #### Request
 ```sh
 curl -X POST \
-  https://{BASE_URL}/api/v2/labels/categories/{CATEGORY_ID} \
+  https://{BASE_URL}/v2/labels/categories/{CATEGORY_ID} \
   -H 'access-token: {ACCESS_TOKEN}'
   -d '{ "name": "New tag"}'
 ```
