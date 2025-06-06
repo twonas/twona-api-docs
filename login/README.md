@@ -22,7 +22,7 @@ $urlToApp = $autologin."?href=".urlencode("https://app.twonas.com/app/p/apollo/u
 
 Method | Url
 ------- | --------
-POST | https://{BASE_URL}/api/v2/login/auto-key
+POST | https://{BASE_URL}/v2/login/auto-key
 
 #### Inputs
 
@@ -54,7 +54,7 @@ Http Status | Details
 #### Request
 ```
 curl -X POST \
-  https://{BASE_URL}/api/v2/login/auto-key \
+  https://{BASE_URL}/v2/login/auto-key \
   -H 'access-token: {ACCESS_TOKEN}' \
   -d '{"email":"user@twonas.com"}'
 ```
