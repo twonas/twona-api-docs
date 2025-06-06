@@ -25,7 +25,7 @@ Field name |     Type    | Description
 
 Method | Url
 ------- | --------
-POST | https://{BASE_URL}/api/v2/p/transfer
+POST | https://{BASE_URL}/v2/p/transfer
 
 #### Inputs
 
@@ -48,7 +48,7 @@ Http Status | Details
 #### Request
 ```
 curl -X POST \
-  https://{BASE_URL}/api/v2/p/transfer \
+  https://{BASE_URL}/v2/p/transfer \
   -H 'access-token: {ACCESS_TOKEN}' \
   -d '{
         "emails": ["diego@twonas.com","miguel@twonas.com"],
