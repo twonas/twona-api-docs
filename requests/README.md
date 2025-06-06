@@ -61,7 +61,7 @@ Get the information of a specific Project.
 
 Method | Url
 ------- | --------
-GET | https://{BASE_URL}/api/v2/requests/{REQUEST_ID}
+GET | https://{BASE_URL}/v2/requests/{REQUEST_ID}
 
 #### Inputs
 
@@ -87,7 +87,7 @@ Http Status | Details
 
 ```sh
 curl -X GET \
-  https://{BASE_URL}/api/v2/requests/{REQUEST_ID} \
+  https://{BASE_URL}/v2/requests/{REQUEST_ID} \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
@@ -147,7 +147,7 @@ Return a list of all active files (attachments) in a Project.
 
 Method | Url
 ------- | --------
-GET | https://{BASE_URL}/api/v2/requests/{REQUEST_ID}/files
+GET | https://{BASE_URL}/v2/requests/{REQUEST_ID}/files
 
 #### Inputs
 
@@ -172,7 +172,7 @@ Http Status | Details
 #### Request
 ```sh
 curl -X GET \
-  https://{BASE_URL}/api/v2/requests/{REQUEST_ID}/files \
+  https://{BASE_URL}/v2/requests/{REQUEST_ID}/files \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
@@ -215,7 +215,7 @@ Return the list of all Projects in the organization.
 
 Method | Url
 ------- | --------
-GET | https://{BASE_URL}/api/v2/requests
+GET | https://{BASE_URL}/v2/requests
 
 #### Inputs
 
@@ -265,7 +265,7 @@ Http Status | Details
 ```sh
 # Get Projects from the workflow 31 order by id desc
 curl -X GET \
-  https://{BASE_URL}/api/v2/requests \
+  https://{BASE_URL}/v2/requests \
   -H 'access-token: {ACCESS_TOKEN}' \
   --data-urlencode 'q=workflow:31' \
   --data-urlencode 'sort_by=-id'
@@ -367,7 +367,7 @@ Return the list of all Project status in the organization.
 
 Method | Url | Description
 ------- | -------- | -------
-GET | https://{BASE_URL}/api/v2/requests/status | Get all Project status
+GET | https://{BASE_URL}/v2/requests/status | Get all Project status
 
 #### Inputs
 
@@ -392,7 +392,7 @@ Http Status | Details
 #### Request
 ```sh
 curl -X GET \
-  https://{BASE_URL}/api/v2/requests/status \
+  https://{BASE_URL}/v2/requests/status \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
@@ -427,7 +427,7 @@ Return the details of a Project status.
 
 Method | Url | Description
 ------- | -------- | -------
-GET | https://{BASE_URL}/api/v2/requests/status/{STATUS_ID} | Get request status
+GET | https://{BASE_URL}/v2/requests/status/{STATUS_ID} | Get request status
 
 #### Inputs
 
@@ -449,7 +449,7 @@ Http Status | Details
 #### Request
 ```sh
 curl -X GET \
-  https://{BASE_URL}/api/v2/requests/status/371 \
+  https://{BASE_URL}/v2/requests/status/371 \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
@@ -476,7 +476,7 @@ Upload a new version from a given project.
 
 Method | Url | Description
 ------- | -------- | -------
-POST | https://{BASE_URL}/api/v2/requests/{id}/versions | Upload New Version
+POST | https://{BASE_URL}/v2/requests/{id}/versions | Upload New Version
 
 #### Inputs
 
@@ -505,7 +505,7 @@ Http Status | Details
 #### Request
 ```sh
 curl -X POST \
-  https://{BASE_URL}/api/v2/requests/233/versions \
+  https://{BASE_URL}/v2/requests/233/versions \
   -H 'access-token: {ACCESS_TOKEN}'
   -d '{ "files": ["xsd332se34", "32dr33$dsde"],
         "labels": [23, 44, 456],
@@ -570,7 +570,7 @@ Create a project in the system.
 
 Method | Url | Description
 ------- | -------- | -------
-POST | https://{BASE_URL}/api/v2/requests | Create Project
+POST | https://{BASE_URL}/v2/requests | Create Project
 
 #### Inputs
 
@@ -600,7 +600,7 @@ Http Status | Details
 #### Request
 ```sh
 curl -X POST \
-  https://{BASE_URL}/api/v2/requests \
+  https://{BASE_URL}/v2/requests \
   -H 'access-token: {ACCESS_TOKEN}'
   -d '{ "files": ["xsd332se34", "32dr33$dsde"],
         "labels": [23, 44, 456],
@@ -666,7 +666,7 @@ Set details of a project.
 
 Method | Url | Description
 ------- | -------- | -------
-POST | https://{BASE_URL}/api/v2/requests | Set Project
+POST | https://{BASE_URL}/v2/requests | Set Project
 
 #### Inputs
 
@@ -695,7 +695,7 @@ Http Status | Details
 #### Request
 ```sh
 curl -X POST \
-  https://{BASE_URL}/api/v2/requests \
+  https://{BASE_URL}/v2/requests \
   -H 'access-token: {ACCESS_TOKEN}'
   -d '{ "files": ["xsd332se34", "32dr33$dsde"],
         "labels": [23, 44, 456],
