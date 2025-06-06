@@ -33,7 +33,7 @@ Create a new group.
 
 Method | Url
 ------- | --------
-POST | https://{BASE_URL}/api/v2/groups
+POST | https://{BASE_URL}/v2/groups
 
 #### Inputs
 
@@ -56,7 +56,7 @@ Http Status | Details
 #### Request
 ```
 curl -X POST \
-  https://{BASE_URL}/api/v2/groups \
+  https://{BASE_URL}/v2/groups \
   -H 'access-token: {ACCESS_TOKEN}' \
   -d '{"name": "new group's name"}'
 ```
@@ -81,7 +81,7 @@ Get the information of a specific group.
 
 Method | Url
 ------- | --------
-GET | https://{BASE_URL}/api/v2/groups/{GROUP_ID}
+GET | https://{BASE_URL}/v2/groups/{GROUP_ID}
 
 
 ### Response
@@ -100,7 +100,7 @@ Http Status | Details
 #### Request
 ```
 curl -X GET \
-  https://{BASE_URL}/api/v2/groups/{GROUP_ID} \
+  https://{BASE_URL}/v2/groups/{GROUP_ID} \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
@@ -124,7 +124,7 @@ Return a collection of all groups.
 
 Method | Url | Description
 ------- | -------- | -------
-GET | https://{BASE_URL}/api/v2/groups | Get all groups
+GET | https://{BASE_URL}/v2/groups | Get all groups
 
 ### Response
 
@@ -143,7 +143,7 @@ Http Status | Details
 #### Request
 ```
 curl -X GET \
-  https://{BASE_URL}/api/v2/groups \
+  https://{BASE_URL}/v2/groups \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
@@ -175,7 +175,7 @@ Return the collection of users in a specific group.
 
 Method | Url | Description
 ------- | -------- | -------
-GET | https://{BASE_URL}/api/v2/groups/{GROUP_ID}/users | Get users in the group with GROUP ID
+GET | https://{BASE_URL}/v2/groups/{GROUP_ID}/users | Get users in the group with GROUP ID
 
 ### Response
 
@@ -194,7 +194,7 @@ Http Status | Details
 #### Request
 ```
 curl -X GET \
-  https://{BASE_URL}/api/v2/groups/{GROUP_ID}/users \
+  https://{BASE_URL}/v2/groups/{GROUP_ID}/users \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
@@ -228,7 +228,7 @@ Add one user in a specific group.
 
 Method | Url
 ------- | --------
-POST | https://{BASE_URL}/api/v2/groups/{GROUP_ID}/users
+POST | https://{BASE_URL}/v2/groups/{GROUP_ID}/users
 
 #### Inputs
 
@@ -251,7 +251,7 @@ Http Status | Details
 #### Request
 ```
 curl -X POST \
-  https://{BASE_URL}/api/v2/groups/{GROUP_ID}/users \
+  https://{BASE_URL}/v2/groups/{GROUP_ID}/users \
   -H 'access-token: {ACCESS_TOKEN}' \
   -d '{"id": "iDCHaRs"}'
 ```
