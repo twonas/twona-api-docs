@@ -41,7 +41,7 @@ Return the details of a specific request (by its unique request id)
 
 Method | Url
 ------- | --------
-GET | https://{BASE_URL}/api/v2/workflows
+GET | https://{BASE_URL}/v2/workflows
 
 #### Inputs
 
@@ -65,7 +65,7 @@ Http Status | Details
 
 ```sh
 curl -X GET \
-  https://{BASE_URL}/api/v2/workflows \
+  https://{BASE_URL}/v2/workflows \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
@@ -104,7 +104,7 @@ Return the list of all active transitions of a workflow.
 
 Method | Url
 ------- | --------
-GET | https://{BASE_URL}/api/v2/workflows/{WORKFLOW_ID}/transitions
+GET | https://{BASE_URL}/v2/workflows/{WORKFLOW_ID}/transitions
 
 #### Inputs
 
@@ -134,7 +134,7 @@ Http Status | Details
 #### Request
 ```sh
 curl -X GET \
-  https://{BASE_URL}/api/v2/workflows/{WORKFLOW_ID}/transitions \
+  https://{BASE_URL}/v2/workflows/{WORKFLOW_ID}/transitions \
   -H 'access-token: {ACCESS_TOKEN}' \
   -d 'origin=81'
 ```
