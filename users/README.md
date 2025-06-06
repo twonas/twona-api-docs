@@ -53,7 +53,7 @@ Once the link in the email has been clicked, the user will be added to the provi
 
 Method | Url
 ------- | --------
-POST | https://{BASE_URL}/api/v2/users/invitations
+POST | https://{BASE_URL}/v2/users/invitations
 
 #### Inputs
 
@@ -82,7 +82,7 @@ Http Status | Details
 
 ```
 curl -X POST \
-  https://{BASE_URL}/api/v2/users/invitations \
+  https://{BASE_URL}/v2/users/invitations \
   -H 'access-token: {ACCESS_TOKEN}'
   -d '{ "name": "User's name",
         "email": "example@twonas.com",
@@ -100,7 +100,7 @@ Return the list of all pending or expired invitations.
 
 Method | Url
 ------- | --------
-GET | https://{BASE_URL}/api/v2/users/invitations
+GET | https://{BASE_URL}/v2/users/invitations
 
 #### Inputs
 
@@ -123,7 +123,7 @@ Http Status | Details
 #### Request
 ```
 curl -X GET \
-  https://{BASE_URL}/api/v2/users/invitations \
+  https://{BASE_URL}/v2/users/invitations \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
@@ -162,7 +162,7 @@ Cancel a "Pending" invitation. Expired or accepted invitations cannot be cancele
 
 Method | Url
 ------- | --------
-DELETE | https://{BASE_URL}/api/v2/users/invitations/{EMAIL}
+DELETE | https://{BASE_URL}/v2/users/invitations/{EMAIL}
 
 #### Inputs
 
@@ -185,7 +185,7 @@ Http Status | Details
 #### Request
 ```
 curl -X DELETE \
-  https://{BASE_URL}/api/v2/users/invitations/example@twonas.com \
+  https://{BASE_URL}/v2/users/invitations/example@twonas.com \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 ## Get all users
@@ -198,7 +198,7 @@ Return the list of all active/inactive users in the organization.
 
 Method | Url | Description
 ------- | -------- | -------
-GET | https://{BASE_URL}/api/v2/users | Get all active users
+GET | https://{BASE_URL}/v2/users | Get all active users
 
 #### Inputs
 
@@ -234,14 +234,14 @@ Http Status | Details
 #### Request
 ```
 curl -X GET \
-  https://{BASE_URL}/api/v2/users \
+  https://{BASE_URL}/v2/users \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
 ##### Filtering: All users with email starting with "diego"
 ```
 curl -G \
-  https://{BASE_URL}/api/v2/users \
+  https://{BASE_URL}/v2/users \
   -H 'access-token: {ACCESS_TOKEN}'
   --data-urlencode 'q=email:diego*'
 ```
@@ -276,7 +276,7 @@ Return the details of a specific user (by its unique user id)
 
 Method | Url | Description
 ------- | -------- |
-GET | https://{BASE_URL}/api/v2/users/{USER_ID}
+GET | https://{BASE_URL}/v2/users/{USER_ID}
 
 #### Inputs
 
@@ -301,7 +301,7 @@ Http Status | Details
 
 ```
 curl -X GET \
-  https://{BASE_URL}/api/v2/users/{USER_ID} \
+  https://{BASE_URL}/v2/users/{USER_ID} \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
@@ -326,7 +326,7 @@ Add users in bulk by WITHOUT email confirmation. Users will be added (and made a
 
 Method | Url
 ------- | --------
-POST | https://{BASE_URL}/api/v2/users/bulk
+POST | https://{BASE_URL}/v2/users/bulk
 
 #### Inputs
 
@@ -358,7 +358,7 @@ Http Status | Details
 
 ```
 curl -X POST \
-  https://{BASE_URL}/api/v2/users/bulk \
+  https://{BASE_URL}/v2/users/bulk \
   -H 'access-token: {ACCESS_TOKEN}'
   -d '{ "emails": ["newUserMail@yourDomain.com","anotherUserMail@yourDomain.com",...],
         "groups": [11,12,13,...]}'
