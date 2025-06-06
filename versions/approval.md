@@ -21,7 +21,7 @@ Return all the approvals .
 
 Method | Url
 ------- | --------
-GET | https://{BASE_URL}/api/v2/versions/{VERSION_ID}/approvals
+GET | https://{BASE_URL}/v2/versions/{VERSION_ID}/approvals
 
 #### Inputs
 
@@ -49,7 +49,7 @@ Http Status | Details
 #### Request
 ```
 curl -X GET \
-  https://{BASE_URL}/api/v2/versions/VERSION_ID/approvals \
+  https://{BASE_URL}/v2/versions/VERSION_ID/approvals \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
@@ -57,7 +57,7 @@ curl -X GET \
 # Filtering: All the approvals shared with the users who start with "rafael"
 
 curl -G \
-  https://{BASE_URL}/api/v2/versions/VERSION_ID/approvals \
+  https://{BASE_URL}/v2/versions/VERSION_ID/approvals \
   -H 'access-token: {ACCESS_TOKEN}'
   --data-urlencode '?q=user:rafael*'
 ```
