@@ -27,7 +27,7 @@ You can test the connectivity with Twona by requesting a session call which will
 
 Method | Url | Description
 ------- | -------- | -------
-GET | https://{BASE_URL}/api/v2/session | Get session data
+GET | https://{BASE_URL}/v2/session | Get session data
 
 #### Inputs
 
@@ -51,7 +51,7 @@ Http Status | Details
 #### Request
 ```sh
 curl -X GET \
-  https://{BASE_URL}/api/v2/session \
+  https://{BASE_URL}/v2/session \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
