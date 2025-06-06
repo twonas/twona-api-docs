@@ -55,7 +55,7 @@ Get the information of a specific event.
 
 Method | Url
 ------- | --------
-GET | https://{BASE_URL}/api/v2/events/{EVENT_ID}
+GET | https://{BASE_URL}/v2/events/{EVENT_ID}
 
 #### Inputs
 
@@ -80,7 +80,7 @@ Http Status | Details
 
 ```sh
 curl -X GET \
-  https://{BASE_URL}/api/v2/events/{EVENT_ID} \
+  https://{BASE_URL}/v2/events/{EVENT_ID} \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
@@ -111,7 +111,7 @@ Get the properties of an event.
 
 Method | Url
 ------- | --------
-GET | https://{BASE_URL}/api/v2/events/{EVENT_ID}/properties
+GET | https://{BASE_URL}/v2/events/{EVENT_ID}/properties
 
 #### Inputs
 
@@ -136,7 +136,7 @@ Http Status | Details
 #### Request
 ```sh
 curl -X GET \
-  https://{BASE_URL}/api/v2/events/{EVENT_ID}/properties \
+  https://{BASE_URL}/v2/events/{EVENT_ID}/properties \
   -H 'access-token: {ACCESS_TOKEN}'
 ```
 
@@ -210,7 +210,7 @@ Get all the events in the organization.
 
 Method | Url
 ------- | --------
-GET | https://{BASE_URL}/api/v2/events
+GET | https://{BASE_URL}/v2/events
 
 #### Inputs
 
@@ -246,7 +246,7 @@ Http Status | Details
 #### Request
 ```sh
 curl -X GET \
-  https://{BASE_URL}/api/v2/events \
+  https://{BASE_URL}/v2/events \
   -H 'access-token: {ACCESS_TOKEN}' \
   --data-urlencode 'q=request:3132' \
   --data-urlencode 'type=requests.status.updated'
