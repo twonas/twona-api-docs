@@ -27,7 +27,7 @@ Field name |     Type    | Description
 **emails** (required) | array | Collection of emails to send the request for feedback/approval to
 **subject** (required) | string | Short explanation that will be used in the email Subject
 **message** (required) | string | Long text to include further explanations or details
-**files** (required) | array<integer> | Collection of file IDs to get feedback/approval from
+**files** (required) | array<integer> | Collection of file IDs (int) to get feedback/approval from
 **allow_see** (optional) | boolean | TRUE to allow a transparent process where users see each other's feedback/approvals (default: `false`)
 **get_approval** (optional) | boolean | TRUE to request a formal approval/rejection (default: `false`)
 **get_comments** (optional) | boolean | TRUE to allow the users to comment on the files (default: `false`)
